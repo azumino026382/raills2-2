@@ -6,10 +6,10 @@ class Reservation < ApplicationRecord
   validates :person_num, presence: { message: "人数を入力してください"}
   validate :start_check
 
-    def start_check
-        if self.start_date.present? && self.end_date < Date.today
-          errors.add(:end, "過去の日付は使えません")
-        end      
-    end
+  def start_check
+    if self.start_date.present? && self.end_date < Date.today
+      errors.add(:end, "過去の日付は使えません")
+    end      
+  end
        
 end
