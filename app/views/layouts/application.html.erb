@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Work22</title>
+    <title>Work2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <header>
+      <h1>ポテパンロゴ</h1>
+      
+      <nav>
+        <% if user_signed_in? %>
+          <strong><%= link_to current_user.name, accounts_show_path %></strong>
+          <%= link_to 'アカウント設定', accounts_show_path %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'ログイン', new_user_session_path %>
+          <%= link_to '新規登録', new_user_registration_path %>
+        <% end %>
+      </nav>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

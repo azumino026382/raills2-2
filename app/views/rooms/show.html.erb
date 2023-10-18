@@ -1,0 +1,44 @@
+<div class="container RoomDetailsContainer">
+  <div class="RoomDetailsHeader">
+    <%= link_to "←戻る", rooms_path %>
+  </div>
+  <div class="RoomDetails">
+    <div class="RoomDetailsBody">
+      <div class="RoomDetals__name-and-price">
+        <p class="RoomDetals__name"><%= @room.room_name %></p>
+        <p class="RoomDetals__price"><%= "¥#{@room.price}" %></p>
+      </div>
+      <p class=RoomDetals__address><%= @room.address %></p>
+      <span class="Room__stars">
+        <img alt="スターアイコン" src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img alt="スターアイコン" src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img alt="スターアイコン" src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img alt="スターアイコン" src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img alt="スターアイコン" src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+      </span>
+      <p class=RoomDetals__content><%= @room.content %></p>
+      <div class=ReservationForm>   
+        <%= form_with model: @reservation, url: confirm_reservations_path(@reservation) do |form| %>
+          <%= form.hidden_field :room_id, value:params[:id] %>
+          <%= form.hidden_field :user_id, value:current_user.id %>
+          <div class="ReservationForm__input-container">
+            <div class="ReservationForm__input-group">
+            <%= form.label :start_date ,"チェックイン" %>
+            <%= form.datetime_field :start_date %>
+            </div>
+            <div class="ReservationForm__input-group">
+            <%= form.label :end_date ,"チェックアウト" %>
+            <%= form.datetime_field :end_date %>
+            </div>
+            <div class="ReservationForm__input-group">
+            <%= form.label :person_num ,"人数" %>
+            <%= form.number_field :person_num %>
+            </div>
+          </div>
+          <%= form.submit "予約する" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/error", obj: @reservation %>
+</div>

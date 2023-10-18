@@ -1,0 +1,49 @@
+<div class="FormWrapper">
+  <section class="FormContainer">
+    <h2>新規登録</h2>
+    <%= render "shared/error", obj: @room %>
+    <%=form_with model: @room do |form| %>
+      
+        <div class="RoomsForm__input-group">
+          <%= form.label :room_name ,"施設名" %>
+          <div class="RoomsForm__input">
+            <%= form.text_field :room_name %>
+          </div>
+        </div>
+
+        <div class="RoomsForm__input-group">
+          <%= form.label :content ,"施設詳細" %>
+          <div class="RoomsForm__input">
+            <%= form.text_area :content %>
+          </div>
+        </div>
+        <div class="RoomsForm__input-group">
+          <%= form.label :price ,"料金" %>
+          <div class="RoomsForm__input">
+            <%= form.text_field :price %>
+          </div>
+        </div>
+
+        <div class="RoomsForm__input-group">
+          <%= form.label :address ,"住所" %>
+          <div class="RoomsForm__input">
+            <%= form.text_field :address %>
+          </div>
+        </div>
+
+        <div class="RoomsForm__input-group">
+          <%= form.label :image_room ,"施設画像" %>
+          <div class="RoomsForm__input">
+            <%= form.file_field :image_room %>
+          </div>
+        </div>
+
+      
+        <%= form.submit "保存" %>
+      
+    <% end %>
+    <%= link_to "キャンセル", rooms_path %>
+  </section>
+</div>
+
+  

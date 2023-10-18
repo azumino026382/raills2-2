@@ -1,0 +1,61 @@
+<section class="container UserSection">
+  <h2>設定</h2>
+
+  <div class="UserContainer">
+    <ul class="SideNavigation">
+      <li class="SideNavigation__item ">
+#        <a href="/users/account">アカウント</a>
+         アカウント
+      </li>
+
+      <li class="SideNavigation__item active">
+#        <a href="/users/profile">プロフィール</a>
+         プロフィール
+      </li>
+    </ul>
+
+    <div class="AccountInformation">
+      <ul class="TabNavigation">
+        <li class="TabNavigation__item ">
+#          <a href="/users/account">アカウント</a>
+           アカウントリンク
+        </li>
+
+         <li class="TabNavigation__item active">
+#          <a href="/users/profile">プロフィール</a>
+           プロフィールリンク
+        </li>
+      </ul>
+
+      <div class="AccountInformation__header">
+        <h3>プロフィール</h3>
+        <%= link_to '編集', profiles_edit_path %>
+      </div>
+      
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="image_user">アイコン画像</label>
+
+        <p class="AccountInformation__value">
+          <%= @user.image_user %>
+        </p>
+      </div>
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="name">名前</label>
+
+        <p class="AccountInformation__value">
+          <%= @user.name %>
+        </p>
+      </div>
+
+      <div class="AccountInformation__input-group">
+        <label class="AccountInformation__label" for="self_introduction">自己紹介</label>
+
+        <p class="AccountInformation__value">
+        <%= @user.self_introduction %>
+        </p>
+      </div>
+
+    
+    </div>
+  </div>
+</section>

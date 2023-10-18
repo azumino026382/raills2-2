@@ -1,0 +1,66 @@
+
+<div class="container ReservationsContainer"> 
+  <h2>
+    予約済み一覧
+  </h2>    
+  <div class="table-responsive">
+    <table class="table align-middle ReservationsTable">
+      <thead>
+        <tr>
+          <th>画像</th>
+          <th>施設名</th>
+          <th>紹介文</th>
+          <th class="text-nowrap">合計料金</th>
+          <th class="text-nowrap">チェックイン</th>
+          <th class="text-nowrap">チェックアウト</th>
+          <th class="text-nowrap">予約確定日時</th>
+          <th></th>
+        </tr>
+      </thead>
+        
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <% room = Room.find_by(id: reservation.room_id) %>
+          <tr>  
+            <td>
+            </td>
+            <td>
+              <%= link_to(room.room_name, room_path(room)) %>
+            </td>
+            <td>
+              <%= room.content %>
+            </td>
+            <td class="text-nowrap">
+              <%= "¥#{reservation.total_price}" %>
+            </td>
+            <td class="text-nowrap">
+              <%= reservation.start_date.to_s(:datetime_jp) %>
+            </td>
+            <td class="text-nowrap">
+              <%= reservation.end_date.to_s(:datetime_jp) %>
+            </td>
+            <td class="text-nowrap">
+              <%= reservation.created_at.to_s(:datetime_jp) %>
+            </td>
+            <td>
+              <div class="dropdown">
+                <div class="d-flex align-items-center justify-content-center" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img alt="" src="/assets/icons/three-dot-menu-0c042cde96cc73e058e97d09a24944eb2914eb8c152d418dc6fc6964251fdaa2.svg">
+                </div>
+                <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
+                  <li class="DropdownMenu__item">
+                    再予約
+                  </li>
+                  <li class="DropdownMenu__item DropdownMenu__item--danger">
+                    削除
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+  

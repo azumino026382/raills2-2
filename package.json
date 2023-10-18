@@ -1,5 +1,5 @@
 {
-  "name": "work2-2",
+  "name": "work2",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
