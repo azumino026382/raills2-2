@@ -4,7 +4,6 @@
     <section class="AccountFormContainer">
       <h2 class="AccountFormContainer__title">新規登録</h2>
       <form class="">
-    #サインアップ時に名前を入力できるようにフォームを追加
         <div class="field">
           <%= f.label :name, "ユーザー名" %><br />
           <%= f.text_field :name, autofocus: true %>
@@ -38,8 +37,7 @@
           <%= f.submit "新しいアカウントを作成" %>
         </div>
       </form>
-#      ログインページへリンク
-      <%= link_to "アカウントをお持ちの方はログイン" %>
+      <%= link_to "アカウントをお持ちの方はログイン", new_user_session_path %>
   
     </section>
   </div>    

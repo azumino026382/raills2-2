@@ -14,8 +14,8 @@ class ProfilesController < ApplicationController
 
     def update
         @user = current_user
-        if @user.update(params.require(:user).permit(:image_user, :name, :self_introduction))
-          flash[:notice] = "「#{@schedule.id}」の予定を更新しました"
+        if @user.update(params.require(:user).permit(:avatar, :name, :self_introduction))
+          flash[:notice] = "「#{@user.id}」のプロフィールを更新しました"
           redirect_to :back
         else
           render "edit"

@@ -4,41 +4,37 @@
   <div class="UserContainer">
     <ul class="SideNavigation">
       <li class="SideNavigation__item ">
-#        <a href="/users/account">アカウント</a>
-         アカウント
+        <%= link_to 'アカウント', account_path(current_user) %>
       </li>
 
       <li class="SideNavigation__item active">
-#        <a href="/users/profile">プロフィール</a>
-         プロフィール
+        <%= link_to 'プロフィール', profile_path(current_user) %>
       </li>
     </ul>
 
     <div class="AccountInformation">
       <ul class="TabNavigation">
         <li class="TabNavigation__item ">
-#          <a href="/users/account">アカウント</a>
-           アカウントリンク
+          <%= link_to 'アカウント', account_path(current_user) %>
         </li>
 
-         <li class="TabNavigation__item active">
-#          <a href="/users/profile">プロフィール</a>
-           プロフィールリンク
+        <li class="TabNavigation__item active">
+          <%= link_to 'プロフィール', profile_path(current_user) %>
         </li>
       </ul>
 
       <div class="AccountInformation__header">
         <h3>プロフィール</h3>
-
-
+      </div>
+      <form>
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
         <%= render "devise/shared/error_messages", resource: @user %>
 
-        <div class="field">
+          <div class="field">
             <%= f.label :image_user, "アイコン画像" %><br />
-            <%= f.text_field :image_user, autofocus: true %>
-        </div>
+            <%= f.file_field :avatar, autofocus: true %>
+          </div>
 
           <div class="field">
             <%= f.label :name, "ユーザー名" %><br />
@@ -52,13 +48,14 @@
 
           <div class="actions">
             <%= f.submit "保存" %>
+            <%= link_to "Back", :back %>
           </div>
         <% end %>
+      </form>
+    </div>
+  </div>    
 
-<h3>Cancel my account</h3>
+  <h3>Cancel my account</h3>
 
-<div>Unhappy? <%= button_to "Cancel my account", user_registration_path, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
-
-
+  <div>Unhappy? <%= button_to "Cancel my account", user_registration_path, data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+</section>

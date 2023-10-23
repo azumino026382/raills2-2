@@ -1,16 +1,10 @@
 Rails.application.routes.draw do
-  get 'reservations/index'
-  get 'rservations/index'
-  get 'rooms/index'
-  root to: 'accounts#index'
-  get 'accounts/show'
-  get 'profiles/show'
-  get 'profiles/edit'
-  patch 'profiles/update'
+  root to: 'homes#index'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -18,6 +12,10 @@ Rails.application.routes.draw do
   }
 
   resources :users
+
+  resources :accounts, only: [:show, :edit, :update]
+
+  resources :profiles, only: [:show, :edit, :update]
 
   resources :reservations do
     collection do
@@ -28,6 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :rooms
+  resources :rooms do
+    get :search, on: :collection
+  end  
  
 end

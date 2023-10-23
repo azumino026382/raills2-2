@@ -12,17 +12,35 @@
 
   <body>
     <header>
-      <h1>ポテパンロゴ</h1>
-      
-      <nav>
-        <% if user_signed_in? %>
-          <strong><%= link_to current_user.name, accounts_show_path %></strong>
-          <%= link_to 'アカウント設定', accounts_show_path %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'ログイン', new_user_session_path %>
-          <%= link_to '新規登録', new_user_registration_path %>
-        <% end %>
+      <nav class="navbar Navbar">
+        <div class="NavContainer">
+          <%= link_to "Potepan Share", root_path, class: "header__logo" %>
+          <% if user_signed_in? %>
+          <div class="dropdown">
+            <div class="dropdown-button">
+              <%= link_to "#", class: "NavProfile__avatar" do %>
+                <% if current_user.avatar.attached? %>
+                  <%= image_tag current_user.avatar %>
+                <% else %>
+                  画像なし  
+                <% end %>
+              <% end %>  
+              <%= link_to "#", class: "NavProfile__name" do %><%= current_user.name %><% end %> 
+            </div>
+            <ul class="dropdown__menu DropdownMenu">
+              <li class="DropdownMenu__item"><%= link_to '施設の新規登録', new_room_path %></li>
+              <li class="DropdownMenu__item"><%= link_to '予約済み一覧', reservations_path %></li>
+              <li class="DropdownMenu__item"><%= link_to '登録済み一覧', rooms_path %></li>
+              <li class="DropdownMenu__item"><%= link_to 'アカウント設定', account_path(current_user) %></li>
+              <li class="DropdownMenu__item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div>
+
+          <% else %>
+            <%= link_to 'ログイン', new_user_session_path %>
+            <%= link_to '新規登録', new_user_registration_path %>
+          <% end %>
+        </div>  
       </nav>
     </header>
     <p class="notice"><%= notice %></p>

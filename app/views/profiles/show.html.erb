@@ -4,39 +4,35 @@
   <div class="UserContainer">
     <ul class="SideNavigation">
       <li class="SideNavigation__item ">
-#        <a href="/users/account">アカウント</a>
-         アカウント
+        <%= link_to 'アカウント', account_path(current_user) %>
       </li>
 
       <li class="SideNavigation__item active">
-#        <a href="/users/profile">プロフィール</a>
-         プロフィール
+        <%= link_to 'プロフィール', profile_path(current_user) %>
       </li>
     </ul>
 
     <div class="AccountInformation">
       <ul class="TabNavigation">
         <li class="TabNavigation__item ">
-#          <a href="/users/account">アカウント</a>
-           アカウントリンク
+          <%= link_to 'アカウント', account_path(current_user) %>
         </li>
 
-         <li class="TabNavigation__item active">
-#          <a href="/users/profile">プロフィール</a>
-           プロフィールリンク
+        <li class="TabNavigation__item active">
+          <%= link_to 'プロフィール', profile_path(current_user) %>
         </li>
       </ul>
 
       <div class="AccountInformation__header">
         <h3>プロフィール</h3>
-        <%= link_to '編集', profiles_edit_path %>
+        <%= link_to '編集', edit_profile_path(current_user) %>
       </div>
       
       <div class="AccountInformation__input-group">
         <label class="AccountInformation__label" for="image_user">アイコン画像</label>
 
         <p class="AccountInformation__value">
-          <%= @user.image_user %>
+          <%= image_tag current_user.avatar if current_user.avatar.attached? %>
         </p>
       </div>
       <div class="AccountInformation__input-group">

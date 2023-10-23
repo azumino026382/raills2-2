@@ -1,0 +1,41 @@
+<div class="SearchRoomsFormContainer">
+    <%= render "shared/search" %>
+</div>
+<div class="container RoomsContainer">
+  <p class="RoomsContainer__result">
+    <%= "#{@result_count}件が見つかりました。" %>
+  </p>
+  
+  <ul class="RoomList">
+    <% @rooms.each do |room| %>
+    <li class="Room">
+      <img alt="部屋画像" class="Room__image" src="/assets/room/default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png">
+      <div class="RoomBodyWrapper">
+        <p class="Room__name">
+          <%= room.room_name %>
+        </p>
+        <p class="Room__address">
+          <%= room.address %>
+        </p>
+        <span class="Room__stars">
+          <img alt="スターアイコン" src="/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+          <img alt="スターアイコン" src="/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+          <img alt="スターアイコン" src="/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+          <img alt="スターアイコン" src="/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+          <img alt="スターアイコン" src="/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        </span>
+        <p class="Room__content">
+          <%= room.content %>
+        </p>
+        <div class="RoomFooter">
+          <p class="Room__price">
+            <%= "¥#{room.price}~" %>
+          </p>
+          <%= link_to '詳細はこちら', room_path(room) %>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  
+</div>
