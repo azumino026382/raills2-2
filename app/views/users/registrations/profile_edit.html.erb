@@ -29,7 +29,7 @@
       <form>
         <%= form_with model: @user, url: {controller: 'users/registrations', action: 'profile_update' }, local: true do |f| %>
 
-        <%= render "devise/shared/error_messages", resource: @user %>
+        <%= render "shared/error", object: f.object, resource: @user %>
 
           <div class="field">
             <%= f.label :avatar, "アイコン画像" %><br />

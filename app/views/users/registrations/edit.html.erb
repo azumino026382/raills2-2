@@ -38,12 +38,12 @@
     
         <div class="field">
           <%= f.label :password, "変更後パスワード" %><br />
-          <%= f.email_field :password, autofocus: true %>
+          <%= f.password_field :password, autofocus: true %>
         </div>
     
         <div class="field">
           <%= f.label :password_confirmation, "確認用パスワード" %><br />
-          <%= f.email_field :password_confirmation, autofocus: true %>
+          <%= f.password_field :password_confirmation, autofocus: true %>
         </div>
     
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

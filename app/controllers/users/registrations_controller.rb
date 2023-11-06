@@ -83,12 +83,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end  
 
   def profile_edit
+   
     @user = current_user
+
   end
    
   def profile_update
+  
     @user = current_user
+
     @user.update(params.require(:user).permit(:avatar, :name, :self_introduction))
+
     if @user.save
       redirect_to profile_show_path, notice: "プロフィール情報を更新しました"      
     else
