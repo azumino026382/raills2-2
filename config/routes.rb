@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+  
   root to: 'homes#index'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
+    get 'users/account', to: 'users/registrations#show',as: 'account_show'
+    get 'users/edit', to: 'users/registrations#edit',as: 'account_edit'
+    patch 'users/account', to: 'users/registrations#update',as: 'account_update'
+    get 'users/profile', to: 'users/registrations#profile_show', as: 'profile_show'
+    get 'users/profile/edit', to: 'users/registrations#profile_edit', as: 'profile_edit'
+    patch 'users/profile/update', to: 'users/registrations#profile_update', as: 'profile_update'
+
   end
 
 
@@ -11,12 +19,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :users
-
-  resources :accounts, only: [:show, :edit, :update]
-
-  resources :profiles, only: [:show, :edit, :update]
-
+  resources :users 
+  
   resources :reservations do
     collection do
       post :confirm

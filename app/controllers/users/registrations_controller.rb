@@ -59,4 +59,46 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def show
+    @user = current_user
+  end
+
+  def edit
+    @user = current_user
+  end 
+
+  def update
+    @user = current_user
+    if @user.update(params.require(:user).permit(:email, :password, :password_confirmation))
+      flash[:notice] = "アカウント情報を更新しました"
+      redirect_to root_path
+    else
+      render "edit"
+    end
+  end
+  
+  def profile_show
+    @user = current_user
+  end  
+
+  def profile_edit
+    @user = current_user
+  end
+   
+  def profile_update
+    @user = current_user
+    @user.update(params.require(:user).permit(:avatar, :name, :self_introduction))
+    if @user.save
+      redirect_to profile_show_path, notice: "プロフィール情報を更新しました"      
+    else
+      render "profile_edit"
+    end
+  end
+
+  protected
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
 end

@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
         
-  validates :name, :email, :password, :password_confirmation, presence: true
-
+  validates :name, :email, :password, :password_confirmation, presence: { message: "省略できません" }, on: :create
+  
   has_many :reservations, dependent: :destroy
   
   has_one_attached :avatar
