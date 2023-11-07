@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  before_action :authenticate_user!
 
   # GET /resource/sign_up
   # def new
@@ -65,11 +66,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def edit
-    @user = current_user
+ 
+      @user = current_user
+ 
   end 
 
   def update
+    binding.pry
     @user = current_user
+    binding.pry
     if @user.update(params.require(:user).permit(:email, :password, :password_confirmation))
       flash[:notice] = "アカウント情報を更新しました"
       redirect_to root_path
@@ -83,17 +88,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end  
 
   def profile_edit
-   
+  
     @user = current_user
-
+  
   end
    
   def profile_update
-  
+    binding.pry
     @user = current_user
-
-    @user.update(params.require(:user).permit(:avatar, :name, :self_introduction))
-
+    binding.pry
+    @user.update(params.require(:user).permit(:image_user, :name, :self_introduction))
+    binding.pry
     if @user.save
       redirect_to profile_show_path, notice: "プロフィール情報を更新しました"      
     else

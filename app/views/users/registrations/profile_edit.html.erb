@@ -27,7 +27,7 @@
         <h3>プロフィール</h3>
       </div>
       <form>
-        <%= form_with model: @user, url: {controller: 'users/registrations', action: 'profile_update' }, local: true do |f| %>
+        <%= form_with model: @user, url: profile_update_path, local: true do |f| %>
 
         <%= render "shared/error", object: f.object, resource: @user %>
 
