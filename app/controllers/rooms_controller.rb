@@ -1,14 +1,15 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :show, :edit, :destroy]
   def index
     @rooms = Room.all
   end
-
+  
   def new
     @room = Room.new
   end
   
   def create
-    @room = Room.new(params.require(:room).permit(:image_room, :room_name, :content, :price, :address))
+    @room = Room.new(params.require(:room).permit(:room_image, :room_name, :content, :price, :address))
     
     if @room.save
       flash[:notice] = "施設を新規登録しました"
@@ -47,3 +48,4 @@ class RoomsController < ApplicationController
     end
   end
 end
+

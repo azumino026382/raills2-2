@@ -5,6 +5,13 @@
   <div class="RoomDetails">
     <div class="RoomDetailsBody">
       <div class="RoomDetals__name-and-price">
+      <p class="RoomDetals__image">
+        <% if @room.room_image.blank? %>
+          <%= image_tag 'default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png', size: '150x100' %>
+        <% else %>
+          <%= image_tag @room.room_image.url %>
+        <% end %>
+      </p>
         <p class="RoomDetals__name"><%= @room.room_name %></p>
         <p class="RoomDetals__price"><%= "¥#{@room.price}" %></p>
       </div>
@@ -40,5 +47,5 @@
       </div>
     </div>
   </div>
-  <%= render "shared/error", obj: @reservation %>
+  <%= render "shared/error", object: @reservation %>
 </div>

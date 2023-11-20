@@ -1,25 +1,12 @@
 Rails.application.routes.draw do
-  
   root to: 'homes#index'
-
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-    get 'users/account', to: 'users/registrations#show',as: 'account_show'
-    get 'users/edit', to: 'users/registrations#edit',as: 'account_edit'
-    patch 'users/account', to: 'users/registrations#update',as: 'account_update'
-    get 'users/profile', to: 'users/registrations#profile_show', as: 'profile_show'
-    get 'users/profile/edit', to: 'users/registrations#profile_edit', as: 'profile_edit'
-    patch 'users/profile/update', to: 'users/registrations#profile_update', as: 'profile_update'
-
-  end
-
-
+  get "users/profile" => "users#show"
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
 
-  resources :users 
+  resources :users
   
   resources :reservations do
     collection do
@@ -33,5 +20,5 @@ Rails.application.routes.draw do
   resources :rooms do
     get :search, on: :collection
   end  
- 
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

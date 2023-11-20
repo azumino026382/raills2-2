@@ -3,7 +3,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :authenticate_user!
 
   # GET /resource/sign_up
   # def new
@@ -61,8 +60,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
+
   def show
+    
     @user = current_user
+  
   end
 
   def edit
@@ -72,12 +74,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end 
 
   def update
-    binding.pry
     @user = current_user
-    binding.pry
-    if @user.update(params.require(:user).permit(:email, :password, :password_confirmation))
+    if @user.update(params.require(:user).permit(:email, :password, :password_confirmation, :user_image))
       flash[:notice] = "アカウント情報を更新しました"
-      redirect_to root_path
+      redirect_to users_profile_path
     else
       render "edit"
     end
@@ -97,7 +97,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     binding.pry
     @user = current_user
     binding.pry
-    @user.update(params.require(:user).permit(:image_user, :name, :self_introduction))
+    @user.update(params.require(:user).permit(:name, :self_introduction))
     binding.pry
     if @user.save
       redirect_to profile_show_path, notice: "プロフィール情報を更新しました"      
@@ -111,4 +111,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.update_without_password(params)
   end
 
+
+  def after_update_path_for(resource)
+    # 自分で設定した「マイページ」へのパス
+    users_profile_path
+  end
 end

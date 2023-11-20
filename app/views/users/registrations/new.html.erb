@@ -1,45 +1,35 @@
+<h2>Sign up</h2>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="AccountFormWrapper">
-    <section class="AccountFormContainer">
-      <h2 class="AccountFormContainer__title">新規登録</h2>
-      <form class="">
+  <%= render "users/shared/error_messages", resource: resource %>
 
-        <div class="field">
-          <%= f.label :name, "ユーザー名" %><br />
-          <%= f.text_field :name, autofocus: true %>
-        </div>
+  <div class="field">
+    <%= f.label :name, "ユーザー名" %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
 
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+  <div class="field">
+    <%= f.label :email, "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
 
-        <div class="field">
-          <%= f.label :password, "パスワード" %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
+  <div class="field">
+    <%= f.label :password, "パスワード" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation, "確認用パスワード" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "確認用パスワード" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
 
-    
-        <div class="field">
-          <%= f.hidden_field :image_user, value:"default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png" %>
-        </div>
-
-        <div>
-          <%= f.hidden_field :self_introduction %>
-        <div>
-
-        <div class="actions">
-          <%= f.submit "新しいアカウントを作成" %>
-        </div>
-      </form>
-      <%= link_to "アカウントをお持ちの方はログイン", new_user_session_path %>
-  
-    </section>
-  </div>    
+  <div class="actions">
+    <%= f.submit "新しいアカウントを作成" %>
+  </div>
+  <%= link_to "アカウントをお持ちの方はログイン", new_user_session_path %>
 <% end %>
+
+<%= render "users/shared/links" %>

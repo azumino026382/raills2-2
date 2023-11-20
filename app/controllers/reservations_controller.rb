@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @user = current_user
     @reservations = @user.reservations
@@ -55,10 +56,9 @@ class ReservationsController < ApplicationController
   end
 
 
-private
-
-  def reservation_params
+  private
+    def reservation_params
     params.require(:reservation).permit(:start_date, :end_date, :days, :person_num, :total_price, :room_id)
-  end 
+    end 
 
 end

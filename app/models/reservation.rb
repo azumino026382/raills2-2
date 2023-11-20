@@ -11,5 +11,4 @@ class Reservation < ApplicationRecord
       errors.add(:end, "過去の日付は使えません")
     end      
   end
-       
 end

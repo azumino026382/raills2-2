@@ -1,7 +1,7 @@
 <div class="FormWrapper">
   <section class="FormContainer">
     <h2>新規登録</h2>
-    <%= render "shared/error", obj: @room %>
+    <%= render "shared/error", object: @room %>
     <%=form_with model: @room do |form| %>
       
         <div class="RoomsForm__input-group">
@@ -32,9 +32,9 @@
         </div>
 
         <div class="RoomsForm__input-group">
-          <%= form.label :image_room ,"施設画像" %>
+          <%= form.label :room_image ,"施設画像" %>
           <div class="RoomsForm__input">
-            <%= form.file_field :image_room %>
+            <%= form.file_field :room_image %>
           </div>
         </div>
 

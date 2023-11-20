@@ -5,5 +5,6 @@ class Room < ApplicationRecord
     validates :price, length: { minimum: 1 ,message: "施設の料金(1円以上)を入力してください"}
     
     has_many :reservations
-    mount_uploader :img, ImgUploader
+
+    mount_uploader :room_image, RoomUploader
 end

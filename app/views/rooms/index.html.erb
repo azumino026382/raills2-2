@@ -18,6 +18,11 @@
         <% @rooms.each do |room| %>
           <tr>
             <td>
+              <% if room.room_image.blank? %>
+                <%= image_tag 'default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png', size: '100x80' %>
+                <% else %>
+                <%= image_tag room.room_image.url, size: '100x80' %>
+              <% end %>
             </td>
             <td>
               <%= link_to(room.room_name, room_path(room)) %>
