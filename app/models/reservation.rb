@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
   validates :start_date, presence: { message: "チェックイン日を入力してください"}
   validates :end_date, presence: { message: "チェックアウト日を入力してください"}
   validates :person_num, presence: { message: "人数を入力してください"}
-  validates :total_price, :person_num, length: { message: "1以上を入力してください" }
+  validates :total_price, :person_num, length: { minimum: 1 ,message: "1以上を入力してください" }
   validate :start_check
   validate :end_check
 
