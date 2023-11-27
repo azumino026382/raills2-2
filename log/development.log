@@ -7180,3 +7180,205 @@ Processing by ReservationsController#create as HTML
 Completed 200 OK in 84ms (Views: 54.5ms | ActiveRecord: 0.9ms | Allocations: 80828)
 
 
+Started GET "/rooms/new" for ::1 at 2023-11-28 06:52:34 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.5ms | Allocations: 966)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4201)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 13483)
+Completed 200 OK in 44ms (Views: 23.2ms | ActiveRecord: 0.4ms | Allocations: 32336)
+
+
+Started POST "/rooms" for ::1 at 2023-11-28 06:53:13 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ホテルニューオータニ", "content"=>"ホテルニューオータニは、1964年の東京オリンピック開催に向けて、東洋一の規模、日本初の高層ビルとして誕生しました。過去3回の東京サミットでは主会場に選ばれているほか、50年以上にわたり世界中のVIPをお迎えしてきました。「エグゼクティブハウス 禅」「ザ・メイン」「ガーデンタワー」とコンセプトの異なる3つのホテルに、個性豊かな38ヵ所のレストラン、33ヵ所の宴会場、400年以上の歴史ある日本庭園、都内ホテル最大級のアウトドアプール、ファッションから美術品まで100を超えるショッピングアーケード、エステサロンやスポーツクラブ、さらには万一の際にも安心なクリニックや薬局もございます。", "price"=>"50000", "address"=>"〒 102-8578東京都千代田区紀尾井町4-1", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010ff7fbb0 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231128-6010-zchy89.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ホテルニューオータニ"], ["content", "ホテルニューオータニは、1964年の東京オリンピック開催に向けて、東洋一の規模、日本初の高層ビルとして誕生しました。過去3回の東京サミットでは主会場に選ばれているほか、50年以上にわたり世界中のVIPをお迎えしてきました。「エグゼクティブハウス 禅」「ザ・メイン」「ガーデンタワー」とコンセプトの異なる3つのホテルに、個性豊かな38ヵ所のレストラン、33ヵ所の宴会場、400年以上の歴史ある日本庭園、都内ホテル最大級のアウトドアプール、ファッションから美術品まで100を超えるショッピングアーケード、エステサロンやスポーツクラブ、さらには万一の際にも安心なクリニックや薬局もございます。"], ["price", "50000"], ["address", "〒 102-8578東京都千代田区紀尾井町4-1"], ["created_at", "2023-11-27 21:53:14.041603"], ["updated_at", "2023-11-27 21:53:14.041603"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 143ms (ActiveRecord: 0.9ms | Allocations: 8927)
+
+
+Started GET "/rooms" for ::1 at 2023-11-28 06:53:14 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 7504)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 8071)
+
+
+Started GET "/rooms/new" for ::1 at 2023-11-28 06:53:17 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 5371)
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 0.4ms | Allocations: 7076)
+
+
+Started POST "/rooms" for ::1 at 2023-11-28 06:53:56 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"マンダリン オリエンタル 東京", "content"=>"マンダリン オリエンタル 東京 は、最高峰の評価を得る世界屈指のラグジュアリーホテル。400年の歴史が育む伝統と革新が交錯する日本橋のランドマーク38階に位置するフロントからは、東京スカイツリー®、隅田川から東京湾、皇居や副都心、そして遥か富士山までをも見晴らします。すべてのゲストルームからメトロポリスのダイナミックな眺望をお楽しみください。\r\n東京メトロ銀座線・半蔵門線「三越前駅」地下通路直結でアクセスも抜群。", "price"=>"110000", "address"=>"〒 103-8328東京都中央区日本橋室町2-1-1", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010e9d0328 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231128-6010-ypcijd.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "マンダリン オリエンタル 東京"], ["content", "マンダリン オリエンタル 東京 は、最高峰の評価を得る世界屈指のラグジュアリーホテル。400年の歴史が育む伝統と革新が交錯する日本橋のランドマーク38階に位置するフロントからは、東京スカイツリー®、隅田川から東京湾、皇居や副都心、そして遥か富士山までをも見晴らします。すべてのゲストルームからメトロポリスのダイナミックな眺望をお楽しみください。\r\n東京メトロ銀座線・半蔵門線「三越前駅」地下通路直結でアクセスも抜群。"], ["price", "110000"], ["address", "〒 103-8328東京都中央区日本橋室町2-1-1"], ["created_at", "2023-11-27 21:53:57.092592"], ["updated_at", "2023-11-27 21:53:57.092592"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 115ms (ActiveRecord: 0.9ms | Allocations: 6833)
+
+
+Started GET "/rooms" for ::1 at 2023-11-28 06:53:57 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 7981)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.1ms | Allocations: 8393)
+
+
+Started GET "/rooms/new" for ::1 at 2023-11-28 06:54:00 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5371)
+Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 7062)
+
+
+Started POST "/rooms" for ::1 at 2023-11-28 06:54:30 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ザ・リッツ・カールトン大阪", "content"=>"大阪でもっとも賑わう梅田に位置し、JR大阪駅からも徒歩約7分のザ･リッツ･カールトン大阪は、リッツ・カールトン日本第一号として開業。伝統的なジョージアンスタイル、18世紀の貴族の邸宅を彷彿させる「第二の我が家」で、くつろぎのひと時をお過ごしください。", "price"=>"62000", "address"=>"〒 530-0001大阪府大阪市北区梅田2丁目5番25号", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010fa93390 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231128-6010-c70arv.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ザ・リッツ・カールトン大阪"], ["content", "大阪でもっとも賑わう梅田に位置し、JR大阪駅からも徒歩約7分のザ･リッツ･カールトン大阪は、リッツ・カールトン日本第一号として開業。伝統的なジョージアンスタイル、18世紀の貴族の邸宅を彷彿させる「第二の我が家」で、くつろぎのひと時をお過ごしください。"], ["price", "62000"], ["address", "〒 530-0001大阪府大阪市北区梅田2丁目5番25号"], ["created_at", "2023-11-27 21:54:30.618777"], ["updated_at", "2023-11-27 21:54:30.618777"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 115ms (ActiveRecord: 0.9ms | Allocations: 6840)
+
+
+Started GET "/rooms" for ::1 at 2023-11-28 06:54:30 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2636)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 7909)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 8319)
+
+
+Started GET "/rooms/new" for ::1 at 2023-11-28 06:54:33 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 5370)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.3ms | Allocations: 7060)
+
+
+Started POST "/rooms" for ::1 at 2023-11-28 06:55:13 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ホテルオークラ京都", "content"=>"888年創業の歴史をもつその落ち着いたたたずまい、そしてたくさんのお客様をお迎えしてきたホスピタリティはそのままに、心地よい京都での滞在をお約束します。ヨーロッパのイメージの中に格調高い和の伝統が香るエントランスロビー。お客様とは、いつも温かい出逢いからはじまります。ホテルオークラ京都は京都市の中心に位置し、祇園・先斗町・鴨川など京の名所に大変便利な立地です。", "price"=>"28000", "address"=>"〒 604-0924京都府京都市中京区河原町通二条南入 一之船入町５３７番地の４", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010c97f1a0 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231128-6010-f5fwk3.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ホテルオークラ京都"], ["content", "888年創業の歴史をもつその落ち着いたたたずまい、そしてたくさんのお客様をお迎えしてきたホスピタリティはそのままに、心地よい京都での滞在をお約束します。ヨーロッパのイメージの中に格調高い和の伝統が香るエントランスロビー。お客様とは、いつも温かい出逢いからはじまります。ホテルオークラ京都は京都市の中心に位置し、祇園・先斗町・鴨川など京の名所に大変便利な立地です。"], ["price", "28000"], ["address", "〒 604-0924京都府京都市中京区河原町通二条南入 一之船入町５３７番地の４"], ["created_at", "2023-11-27 21:55:13.520605"], ["updated_at", "2023-11-27 21:55:13.520605"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 109ms (ActiveRecord: 0.8ms | Allocations: 6841)
+
+
+Started GET "/rooms" for ::1 at 2023-11-28 06:55:13 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 8412)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 8824)
+
+
+Started GET "/rooms/new" for ::1 at 2023-11-28 06:55:16 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 5371)
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 7077)
+
+
+Started POST "/rooms" for ::1 at 2023-11-28 06:56:02 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ホテルモントレエーデルホフ札幌", "content"=>"エーデルホフはドイツ語で“貴族のお屋敷”を意味します。かつてのこの立地に存在した北海道営林局の面影を残す種々の巨木が豊かな緑を茂らせ、その緑をそのままにお屋敷の庭園を思わせる憩いの庭をつくろうと、このように名付けたのです。十九世紀末のウィーンに思いをよせたストーリーでお客様をお迎えしています。", "price"=>"10000", "address"=>"〒 060-0002北海道札幌市中央区北2条西1丁目", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010e934248 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231128-6010-6xlmkn.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ホテルモントレエーデルホフ札幌"], ["content", "エーデルホフはドイツ語で“貴族のお屋敷”を意味します。かつてのこの立地に存在した北海道営林局の面影を残す種々の巨木が豊かな緑を茂らせ、その緑をそのままにお屋敷の庭園を思わせる憩いの庭をつくろうと、このように名付けたのです。十九世紀末のウィーンに思いをよせたストーリーでお客様をお迎えしています。"], ["price", "10000"], ["address", "〒 060-0002北海道札幌市中央区北2条西1丁目"], ["created_at", "2023-11-27 21:56:02.348063"], ["updated_at", "2023-11-27 21:56:02.348063"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 115ms (ActiveRecord: 0.9ms | Allocations: 6837)
+
+
+Started GET "/rooms" for ::1 at 2023-11-28 06:56:02 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 8856)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 9266)
+
+
