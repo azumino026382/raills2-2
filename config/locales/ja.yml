@@ -27,6 +27,7 @@ ja:
         updated_at: 更新日
     models:
       user: ユーザー
+      
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -141,14 +142,24 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  
 ja:
   activerecord:
+    attributes:
+      reservation:
+        end: 過去の日付
+        end_date: 終了日
+        start_date: 開始日
+        person_num: 人数
+        total_price: 合計金額  
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+        invalid: "%{attribute}が正しくありません。"
+        blank: "を入力してください。"
   date:
     abbr_day_names:
     - 日

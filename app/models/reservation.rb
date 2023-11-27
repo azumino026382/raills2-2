@@ -1,23 +1,19 @@
 class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :room
-  validates :start_date, presence: { message: "チェックイン日を入力してください"}
-  validates :end_date, presence: { message: "チェックアウト日を入力してください"}
-  validates :person_num, presence: { message: "人数を入力してください"}
-  validates :total_price, :person_num, length: { minimum: 1 ,message: "1以上を入力してください" }
-  validate :start_check
-  validate :end_check
+
+  validates :start_date, :end_date, presence: true
+  validates :total_price, :person_num, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, message: "は1以上を入力してください"} 
+  
+  validate :start_check,
+    :start_end_check
+  
 
   def start_check
-    if self.start_date.present? && self.end_date < Date.today
-      errors.add(:end, "過去の日付は使えません")
-    end      
+    errors.add(:end, "は使えません") if self.start_date.present? && self.end_date < Date.today
   end
 
-  def end_check
-    unless self.start_date < self.end_date 
-      errors.add(:end_date, "開始日より前の日付は使えません。") 
-    end
+  def start_end_check
+    errors.add(:end_date, "は開始日より前の日付は使えません。") if self.end_date < self.start_date
   end
-
 end

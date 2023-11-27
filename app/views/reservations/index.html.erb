@@ -42,21 +42,7 @@
             <td class="text-nowrap">
               <%= reservation.created_at.to_s(:datetimeh_jp) %>
             </td>
-            <td>
-              <div class="dropdown">
-                <div class="d-flex align-items-center justify-content-center" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img alt="" src="/assets/icons/three-dot-menu-0c042cde96cc73e058e97d09a24944eb2914eb8c152d418dc6fc6964251fdaa2.svg">
-                </div>
-                <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
-                  <li class="DropdownMenu__item">
-                    再予約
-                  </li>
-                  <li class="DropdownMenu__item DropdownMenu__item--danger">
-                    削除
-                  </li>
-                </ul>
-              </div>
-            </td>
+            
           </tr>
         <% end %>
       </tbody>

@@ -19,8 +19,12 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in" %> 
   </div>
+  <div class="actions">
+    <%= link_to '新規登録', new_user_registration_path %>
+  </div>
+  
 <% end %>
 
-<%= render "users/shared/links" %>
+

@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :show, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :destroy]
   def index
     @rooms = Room.all
   end

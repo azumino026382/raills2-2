@@ -1,5 +1,5 @@
 <div class="container RoomDetailsContainer">
-  <div class="RoomDetailsHeader">
+  <div class="RoomDetailsHeader">  
     <%= link_to "←戻る", rooms_path %>
   </div>
   <div class="RoomDetails">
@@ -26,6 +26,7 @@
       <p class=RoomDetals__content><%= @room.content %></p>
       <div class=ReservationForm>   
         <%= form_with model: @reservation, url: confirm_reservations_path(@reservation) do |form| %>
+          <%= render 'shared/error', object: form.object %>
           <%= form.hidden_field :room_id, value:params[:id] %>
           <%= form.hidden_field :user_id, value:current_user.id %>
           <div class="ReservationForm__input-container">
@@ -47,5 +48,4 @@
       </div>
     </div>
   </div>
-  <%= render "shared/error", object: @reservation %>
 </div>

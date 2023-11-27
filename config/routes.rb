@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   root to: 'homes#index'
-  get "users/profile" => "users#show"
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
+  get "users/profile" => "users#show"
+  
   resources :users
   
   resources :reservations do
