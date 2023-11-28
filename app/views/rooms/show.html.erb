@@ -26,9 +26,9 @@
       <p class=RoomDetals__content><%= @room.content %></p>
       <div class=ReservationForm>   
         <%= form_with model: @reservation, url: confirm_reservations_path(@reservation) do |form| %>
-          <%= render 'shared/error', object: form.object %>
-          <%= form.hidden_field :room_id, value:params[:id] %>
+          
           <%= form.hidden_field :user_id, value:current_user.id %>
+          <%= form.hidden_field :room_id, value:params[:id] %>
           <div class="ReservationForm__input-container">
             <div class="ReservationForm__input-group">
             <%= form.label :start_date ,"チェックイン" %>
@@ -44,6 +44,7 @@
             </div>
           </div>
           <%= form.submit "予約する" %>
+          <%= render 'shared/error', object: form.object %>
         <% end %>
       </div>
     </div>

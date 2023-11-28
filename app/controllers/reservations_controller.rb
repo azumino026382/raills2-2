@@ -12,10 +12,12 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
+    
     @room = Room.find(params[:reservation][:room_id])
+    
     @reservation = Reservation.new(params.require(:reservation).permit(:room_id, :user_id, :start_date, :end_date, :person_num))
     @days = ((@reservation.end_date).to_i - (@reservation.start_date).to_i)/60/60/24
-    @total_price = ((@room.price).to_i * (@reservation.person_num).to_i * (@reservation.days).to_i)
+    @total_price = ((@room.price).to_i * (@reservation.person_num).to_i * (@days).to_i)
   end
 
   def create
