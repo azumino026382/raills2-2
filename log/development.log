@@ -7765,3 +7765,76 @@ Processing by ReservationsController#confirm as HTML
 Completed 200 OK in 70ms (Views: 43.0ms | ActiveRecord: 0.8ms | Allocations: 48993)
 
 
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 18:56:07 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-28T15:01", "end_date"=>"2023-11-29T15:01", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2191)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 25650)
+Completed 200 OK in 69ms (Views: 44.0ms | ActiveRecord: 0.7ms | Allocations: 50816)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 18:56:37 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-28T15:01", "end_date"=>"2023-11-29T15:01", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1456)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6468)
+Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 9945)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 18:57:08 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-28T15:01", "end_date"=>"2023-11-29T15:01", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.6ms | Allocations: 969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 12335)
+Completed 200 OK in 36ms (Views: 25.3ms | ActiveRecord: 0.6ms | Allocations: 14843)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 18:57:22 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-28T15:01", "end_date"=>"2023-11-29T15:01", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 5.2ms | Allocations: 969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 5393)
+Completed 200 OK in 40ms (Views: 28.6ms | ActiveRecord: 0.5ms | Allocations: 7885)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 20:28:36 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-28T15:01", "end_date"=>"2023-11-29T15:01", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 0.8ms | Allocations: 969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 12347)
+Completed 200 OK in 29ms (Views: 17.5ms | ActiveRecord: 0.8ms | Allocations: 16149)
+
+

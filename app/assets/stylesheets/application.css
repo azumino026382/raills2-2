@@ -112,3 +112,67 @@
       text-decoration: none;
   }
   
+    /*ボックス全体*/
+
+.accordion-box {
+
+  margin: 10px 0;
+
+  padding: 0;
+
+}
+
+/*ラベル*/
+
+.accordion-box label {
+
+  display: block;
+
+  font-weight: bold;
+
+  cursor :pointer;
+
+  margin-top: 10px;
+
+  padding:5px;
+
+  background-color: palevioletred;
+
+}
+
+/*チェックボックスを非表示にする*/
+
+.accordion-box input {
+
+  display: none; 
+
+}
+
+/*中身を非表示にしておく*/
+
+.accordion-box div {
+
+  height: 0;
+
+  overflow-y: hidden;
+
+  transition: 0.5s;/*表示するスピード*/
+
+  opacity: 0;
+
+}
+
+/*クリックで中身を表示*/
+
+.accordion-box input:checked + label + div {
+
+  height: auto;
+
+  opacity: 1;
+
+  background-color:#e0fdff;
+
+}
+
+
+
