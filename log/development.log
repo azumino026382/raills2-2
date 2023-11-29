@@ -10104,3 +10104,1426 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 9728)
 
 
+Started GET "/rooms/new" for ::1 at 2023-11-29 15:46:37 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 3.1ms | Allocations: 899)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 4136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 13326)
+Completed 200 OK in 45ms (Views: 26.5ms | ActiveRecord: 0.4ms | Allocations: 32212)
+
+
+Started GET "/rooms" for ::1 at 2023-11-29 15:46:41 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1170)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 6470)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 0.8ms | Allocations: 7065)
+
+
+Started GET "/rooms/new" for ::1 at 2023-11-29 15:46:44 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5382)
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 7089)
+
+
+Started POST "/rooms" for ::1 at 2023-11-29 15:47:16 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"帝国ホテル", "content"=>"帝国ホテルは1890年（明治23年）に日本の迎賓館として、最高のおもてなしを提供するという志のもと、日比谷の地に開業いたしました。\r\n時代を超えても変わることないおもてなしの心と、日々心新たにお客様に向き合う姿勢を大切に、帝国ホテルはこれからもお客様をお迎えしてまいります。\r\n館内には17店舗のレストランやバー、宿泊客専用施設として室内プール、サウナ、フィットネスセンターやビジネスセンター、無料会議室、ミュージックルーム等を備えております。\r\nまた日比谷公園の深い緑を望み、丸の内のビジネス街に程近いだけではなく、ショッピングや観劇、映画鑑賞などが楽しめる日比谷・銀座エリアに位置しています。\r\nどうぞ折々の機会に帝国ホテルをご利用いただきますようご案内申し上げます。", "price"=>"62000", "address"=>"〒 100-8558 東京都千代田区内幸町1-1-1", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010b06dea0 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231129-11545-10is9t.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "帝国ホテル"], ["content", "帝国ホテルは1890年（明治23年）に日本の迎賓館として、最高のおもてなしを提供するという志のもと、日比谷の地に開業いたしました。\r\n時代を超えても変わることないおもてなしの心と、日々心新たにお客様に向き合う姿勢を大切に、帝国ホテルはこれからもお客様をお迎えしてまいります。\r\n館内には17店舗のレストランやバー、宿泊客専用施設として室内プール、サウナ、フィットネスセンターやビジネスセンター、無料会議室、ミュージックルーム等を備えております。\r\nまた日比谷公園の深い緑を望み、丸の内のビジネス街に程近いだけではなく、ショッピングや観劇、映画鑑賞などが楽しめる日比谷・銀座エリアに位置しています。\r\nどうぞ折々の機会に帝国ホテルをご利用いただきますようご案内申し上げます。"], ["price", "62000"], ["address", "〒 100-8558 東京都千代田区内幸町1-1-1"], ["created_at", "2023-11-29 06:47:16.409315"], ["updated_at", "2023-11-29 06:47:16.409315"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 118ms (ActiveRecord: 0.8ms | Allocations: 8892)
+
+
+Started GET "/rooms" for ::1 at 2023-11-29 15:47:16 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 6578)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 6991)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-29 15:47:18 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 6357)
+Completed 200 OK in 56ms (Views: 30.3ms | ActiveRecord: 1.2ms | Allocations: 14719)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 15:50:29 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 6520)
+Completed 200 OK in 17ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 28325)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 15:50:33 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"", "end_date"=>"", "days"=>"0", "person_num"=>"", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms | Allocations: 9612)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/models/reservation.rb:17:in `start_end_check'
+app/controllers/reservations_controller.rb:26:in `create'
+Started GET "/rooms/1" for ::1 at 2023-11-29 15:51:00 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 248)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2238)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 6660)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 9811)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 15:51:04 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.3ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 5298)
+Completed 200 OK in 21ms (Views: 11.5ms | ActiveRecord: 0.4ms | Allocations: 7733)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 15:51:19 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"", "end_date"=>"", "days"=>"0", "person_num"=>"", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms | Allocations: 6916)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/models/reservation.rb:17:in `start_end_check'
+app/controllers/reservations_controller.rb:26:in `create'
+Started GET "/rooms/1" for ::1 at 2023-11-29 15:51:23 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5465)
+Completed 200 OK in 18ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 7755)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 15:51:29 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.5ms | Allocations: 928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5297)
+Completed 200 OK in 22ms (Views: 9.6ms | ActiveRecord: 0.7ms | Allocations: 7732)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 15:51:36 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"", "end_date"=>"", "days"=>"0", "person_num"=>"1", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.2ms | Allocations: 6525)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/models/reservation.rb:17:in `start_end_check'
+app/controllers/reservations_controller.rb:26:in `create'
+Started GET "/rooms/1" for ::1 at 2023-11-29 15:51:41 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1081)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5466)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 7754)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-29 15:52:09 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1081)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 5436)
+Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 7723)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 15:52:14 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 1.9ms | Allocations: 928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5297)
+Completed 200 OK in 19ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 7731)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 15:52:16 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"", "end_date"=>"", "days"=>"0", "person_num"=>"", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.1ms | Allocations: 6916)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/models/reservation.rb:17:in `start_end_check'
+app/controllers/reservations_controller.rb:26:in `create'
+Started POST "/reservations" for ::1 at 2023-11-29 15:54:52 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"", "end_date"=>"", "days"=>"0", "person_num"=>"", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.7ms | Allocations: 1400)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 46.6ms | Allocations: 36511)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 40907)
+Completed 200 OK in 69ms (Views: 50.1ms | ActiveRecord: 0.8ms | Allocations: 68137)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 15:56:01 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T15:55", "end_date"=>"2023-11-30T15:55", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 17ms (ActiveRecord: 0.3ms | Allocations: 2508)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/reservations/confirm" for ::1 at 2023-11-29 16:04:00 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 0.4ms | Allocations: 11499)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Reservation without an ID):
+  
+app/controllers/reservations_controller.rb:36:in `show'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:04:27 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 257)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3272)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 12300)
+Completed 200 OK in 34ms (Views: 15.5ms | ActiveRecord: 0.8ms | Allocations: 27005)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:04:58 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:04", "end_date"=>"2023-11-29T16:04", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5991)
+Completed 200 OK in 21ms (Views: 10.7ms | ActiveRecord: 0.4ms | Allocations: 9561)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 16:05:01 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 16:04:00 +0900", "end_date"=>"2023-11-29 16:04:00 +0900", "days"=>"-1", "person_num"=>"", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.5ms | Allocations: 978)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 34.8ms | Allocations: 35039)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 39344)
+Completed 200 OK in 33458ms (Views: 38.4ms | ActiveRecord: 0.7ms | Allocations: 73295)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:05:50 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:04", "end_date"=>"2023-11-30T16:04", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.2ms | Allocations: 2493)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:07:04 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:04", "end_date"=>"2023-11-30T16:04", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 9329)
+
+
+  
+NameError (undefined local variable or method `binfing' for #<ReservationsController:0x0000000000cdc8>):
+  
+app/controllers/reservations_controller.rb:15:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:07:25 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:04", "end_date"=>"2023-11-30T16:04", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 10307)
+
+
+  
+NameError (undefined local variable or method `binfing' for #<ReservationsController:0x00000000009e70>):
+  
+app/controllers/reservations_controller.rb:15:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:07:58 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:04", "end_date"=>"2023-11-29T16:04", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms | Allocations: 10379)
+
+
+  
+NameError (undefined local variable or method `binfing' for #<ReservationsController:0x00000000009e70>):
+  
+app/controllers/reservations_controller.rb:15:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:08:24 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 566)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 4384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 13952)
+Completed 200 OK in 37ms (Views: 16.2ms | ActiveRecord: 0.7ms | Allocations: 39205)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:08:36 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:08", "end_date"=>"2023-11-29T16:08", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 2102)
+
+
+  
+NameError (undefined local variable or method `binfing' for #<ReservationsController:0x0000000000a2a8>):
+  
+app/controllers/reservations_controller.rb:15:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:09:00 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:08", "end_date"=>"2023-11-29T16:08", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:09:21 +0900
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1594)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6028)
+Completed 200 OK in 59109ms (Views: 8.9ms | ActiveRecord: 1.3ms | Allocations: 57088)
+
+
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:08", "end_date"=>"2023-11-29T16:08", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5620)
+Completed 200 OK in 17ms (Views: 4.1ms | ActiveRecord: 0.6ms | Allocations: 26645)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 16:10:05 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 16:08:00 +0900", "end_date"=>"2023-11-29 16:08:00 +0900", "days"=>"-1", "person_num"=>"1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 41.6ms | Allocations: 32850)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 43.5ms | Allocations: 34211)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 38512)
+Completed 200 OK in 67ms (Views: 47.7ms | ActiveRecord: 0.6ms | Allocations: 48087)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:10:29 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:08", "end_date"=>"2023-11-29T16:08", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.3ms | Allocations: 2530)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:13:08 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:08", "end_date"=>"2023-11-29T16:08", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.6ms | Allocations: 12367)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:13:27 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:08", "end_date"=>"2023-11-29T16:08", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 21ms (ActiveRecord: 0.7ms | Allocations: 14280)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/reservations" for ::1 at 2023-11-29 16:13:38 +0900
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/reservations/index.html.erb:22
+  Rendered reservations/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2526)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 13189)
+Completed 200 OK in 49ms (Views: 36.9ms | ActiveRecord: 0.6ms | Allocations: 19035)
+
+
+Started GET "/rooms" for ::1 at 2023-11-29 16:13:44 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 5435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 10795)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.8ms | Allocations: 12054)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:13:47 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 252)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2688)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 7044)
+Completed 200 OK in 22ms (Views: 7.1ms | ActiveRecord: 0.8ms | Allocations: 13738)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:13:55 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:13", "end_date"=>"2023-11-29T16:13", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1477)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5846)
+Completed 200 OK in 19ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 8664)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 16:14:00 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 16:13:00 +0900", "end_date"=>"2023-11-29 16:13:00 +0900", "days"=>"-1", "person_num"=>"", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+Completed 422 Unprocessable Entity in 77ms (ActiveRecord: 0.7ms | Allocations: 44388)
+
+
+  
+ActiveRecord::RecordInvalid (バリデーションに失敗しました: 人数を入力してください。, 合計金額は1以上を入力してください, 人数は1以上を入力してください, 終了日は開始日より前の日付は使えません。):
+  
+app/controllers/reservations_controller.rb:27:in `create'
+Started POST "/reservations" for ::1 at 2023-11-29 16:14:42 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 16:13:00 +0900", "end_date"=>"2023-11-29 16:13:00 +0900", "days"=>"-1", "person_num"=>"", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.4ms | Allocations: 938)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3028)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 7425)
+Completed 200 OK in 23ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 34678)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:15:01 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:13", "end_date"=>"2023-11-30T16:13", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 27ms (ActiveRecord: 1.6ms | Allocations: 12413)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:22:55 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:13", "end_date"=>"2023-11-30T16:13", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 18ms (ActiveRecord: 0.7ms | Allocations: 14211)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:23:06 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 407)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3825)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 13507)
+Completed 200 OK in 34ms (Views: 19.6ms | ActiveRecord: 0.5ms | Allocations: 26841)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:23:12 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:13", "end_date"=>"2023-11-29T16:13", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.3ms | Allocations: 2494)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:23:29 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:13", "end_date"=>"2023-11-29T16:13", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.6ms | Allocations: 2503)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:23:31 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.4ms | Allocations: 247)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 6976)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 0.6ms | Allocations: 10226)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:23:33 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:13", "end_date"=>"2023-11-29T16:13", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1531)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5991)
+Completed 200 OK in 24ms (Views: 9.9ms | ActiveRecord: 0.5ms | Allocations: 9517)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 16:23:38 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 16:13:00 +0900", "end_date"=>"2023-11-29 16:13:00 +0900", "days"=>"-1", "person_num"=>"1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+Completed 422 Unprocessable Entity in 73ms (ActiveRecord: 0.9ms | Allocations: 44250)
+
+
+  
+ActiveRecord::RecordInvalid (バリデーションに失敗しました: 合計金額は1以上を入力してください, 終了日は開始日より前の日付は使えません。):
+  
+app/controllers/reservations_controller.rb:27:in `create'
+Started POST "/reservations" for ::1 at 2023-11-29 16:24:03 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 16:13:00 +0900", "end_date"=>"2023-11-29 16:13:00 +0900", "days"=>"-1", "person_num"=>"1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 430)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1923)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 6319)
+Completed 200 OK in 19ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 33206)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:24:48 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:13", "end_date"=>"2023-11-29T16:13", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.5ms | Allocations: 12367)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:29:17 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:13", "end_date"=>"2023-11-29T16:13", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.5ms | Allocations: 12367)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:29:38 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 352)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 4162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 13585)
+Completed 200 OK in 38ms (Views: 17.2ms | ActiveRecord: 0.7ms | Allocations: 38869)
+
+
+Started GET "/rooms" for ::1 at 2023-11-29 16:29:44 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1740)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7047)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 0.6ms | Allocations: 7606)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:29:46 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1145)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5501)
+Completed 200 OK in 22ms (Views: 13.1ms | ActiveRecord: 0.6ms | Allocations: 7805)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:29:58 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-30T16:29", "end_date"=>"2023-11-29T16:29", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.6ms | Allocations: 2661)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:30:50 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.5ms | Allocations: 247)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2050)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 7061)
+Completed 200 OK in 22ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 10327)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:30:53 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T16:29", "end_date"=>"2023-11-29T16:29", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1514)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5972)
+Completed 200 OK in 26ms (Views: 11.6ms | ActiveRecord: 0.5ms | Allocations: 9417)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 16:30:55 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 16:29:00 +0900", "end_date"=>"2023-11-29 16:29:00 +0900", "days"=>"-1", "person_num"=>"1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:27:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:28:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 42.9ms | Allocations: 32850)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 44.3ms | Allocations: 34031)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 38334)
+Completed 200 OK in 84ms (Views: 48.7ms | ActiveRecord: 0.7ms | Allocations: 50518)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:31:02 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:29", "end_date"=>"2023-11-30T16:29", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.2ms | Allocations: 2489)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:35:52 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 361)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3962)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 13875)
+Completed 200 OK in 44ms (Views: 17.1ms | ActiveRecord: 0.8ms | Allocations: 39142)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:36:01 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1682)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1763)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms | Allocations: 5248)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    3:     <h2>予約内容の確認</h2>
+    4:       <div class="ReservationConfirm__value-group">
+    5:         <p class="ReservationConfirm__label">チェックイン</p>
+    6:         <p class="ReservationConfirm__value"><%= @reservation.start_date.to_s(:datetime_jp) %></p>
+    7:       </div>
+    8: 
+    9:       <div class="ReservationConfirm__value-group">
+  
+app/views/reservations/confirm.html.erb:6:in `to_s'
+app/views/reservations/confirm.html.erb:6
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:36:11 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5468)
+Completed 200 OK in 20ms (Views: 9.7ms | ActiveRecord: 0.6ms | Allocations: 7774)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:43:30 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms | Allocations: 15321)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/reservation.rb:7:in `<class:Reservation>'
+app/models/reservation.rb:1:in `<main>'
+app/controllers/reservations_controller.rb:18:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:45:29 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 15962)
+
+
+  
+SyntaxError (/Users/ohnoasaki/Documents/POTEPAN-CAMP/Rails_curriculum/work2-2/app/models/reservation.rb:9: syntax error, unexpected ',', expecting `end' or dummy end
+    :start_check,
+                ^
+/Users/ohnoasaki/Documents/POTEPAN-CAMP/Rails_curriculum/work2-2/app/models/reservation.rb:27: syntax error, unexpected `end'):
+  
+app/models/reservation.rb:9: syntax error, unexpected ',', expecting `end' or dummy end
+app/models/reservation.rb:27: syntax error, unexpected `end'
+app/models/reservation.rb:9: syntax error, unexpected ',', expecting `end' or dummy end
+app/models/reservation.rb:27: syntax error, unexpected `end'
+app/controllers/reservations_controller.rb:18:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:45:45 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 0.2ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 0.2ms | Allocations: 1094)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 22124)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    3:     <h2>予約内容の確認</h2>
+    4:       <div class="ReservationConfirm__value-group">
+    5:         <p class="ReservationConfirm__label">チェックイン</p>
+    6:         <p class="ReservationConfirm__value"><%= @reservation.start_date.to_s(:datetime_jp) %></p>
+    7:       </div>
+    8: 
+    9:       <div class="ReservationConfirm__value-group">
+  
+app/views/reservations/confirm.html.erb:6:in `to_s'
+app/views/reservations/confirm.html.erb:6
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:47:03 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 0.2ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 0.2ms | Allocations: 1055)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 22072)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    3:     <h2>予約内容の確認</h2>
+    4:       <div class="ReservationConfirm__value-group">
+    5:         <p class="ReservationConfirm__label">チェックイン</p>
+    6:         <p class="ReservationConfirm__value"><%= @reservation.start_date.to_s(:datetime_jp) %></p>
+    7:       </div>
+    8: 
+    9:       <div class="ReservationConfirm__value-group">
+  
+app/views/reservations/confirm.html.erb:6:in `to_s'
+app/views/reservations/confirm.html.erb:6
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:47:27 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 297)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3987)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 13715)
+Completed 200 OK in 46ms (Views: 18.2ms | ActiveRecord: 0.7ms | Allocations: 39181)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:47:37 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1765)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms | Allocations: 5267)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    3:     <h2>予約内容の確認</h2>
+    4:       <div class="ReservationConfirm__value-group">
+    5:         <p class="ReservationConfirm__label">チェックイン</p>
+    6:         <p class="ReservationConfirm__value"><%= @reservation.start_date.to_s(:datetime_jp) %></p>
+    7:       </div>
+    8: 
+    9:       <div class="ReservationConfirm__value-group">
+  
+app/views/reservations/confirm.html.erb:6:in `to_s'
+app/views/reservations/confirm.html.erb:6
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:47:42 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5468)
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 0.7ms | Allocations: 7772)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:51:47 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 440)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4083)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 13880)
+Completed 200 OK in 47ms (Views: 18.7ms | ActiveRecord: 0.7ms | Allocations: 39143)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:51:51 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 2955)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/reservations_controller.rb:22:in `to_s'
+app/controllers/reservations_controller.rb:22:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:52:28 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 6022)
+Completed 200 OK in 17ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 27578)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 16:52:31 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"", "end_date"=>"", "days"=>"0", "person_num"=>"1", "total_price"=>"0"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 44.4ms | Allocations: 32978)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 46.3ms | Allocations: 34318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | Allocations: 38619)
+Completed 200 OK in 74ms (Views: 50.6ms | ActiveRecord: 0.8ms | Allocations: 48119)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:52:58 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:52", "end_date"=>"2023-11-30T16:52", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.3ms | Allocations: 2533)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 16:57:56 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-29T16:52", "end_date"=>"2023-11-30T16:52", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 9ms (ActiveRecord: 1.9ms | Allocations: 12379)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-29 16:58:14 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3404)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3566)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.7ms | Allocations: 28866)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :@room:Symbol):
+    30:           <%= form.hidden_field :user_id, value:current_user.id %>
+    31:           
+    32:           <%= form.hidden_field :room_id, value:params[:id] %>
+    33:           <%= form.hidden_field :room_id, value:params[:@room.id] %>
+    34:           <div class="ReservationForm__input-container">
+    35:             <div class="ReservationForm__input-group">
+    36:             <%= form.label :start_date ,"チェックイン" %>
+  
+app/views/rooms/show.html.erb:33
+app/views/rooms/show.html.erb:28
+Started GET "/rooms/1" for ::1 at 2023-11-29 17:01:12 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 367)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4157)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 13637)
+Completed 200 OK in 48ms (Views: 20.7ms | ActiveRecord: 0.7ms | Allocations: 39186)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 17:01:22 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T17:01", "end_date"=>"2023-11-29T17:01", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1536)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6026)
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 9713)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 17:01:24 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 17:01:00 +0900", "end_date"=>"2023-11-29 17:01:00 +0900", "days"=>"-1", "person_num"=>"1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms | Allocations: 9746)
+
+
+  
+NameError (undefined local variable or method `room' for #<ReservationsController:0x0000000000a3c0>):
+  
+app/controllers/reservations_controller.rb:31:in `create'
+Started POST "/reservations" for ::1 at 2023-11-29 17:01:59 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 17:01:00 +0900", "end_date"=>"2023-11-29 17:01:00 +0900", "days"=>"-1", "person_num"=>"1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+Redirected to http://localhost:3000/rooms/1
+Completed 302 Found in 25ms (ActiveRecord: 0.8ms | Allocations: 30391)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-29 17:01:59 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 282)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 4115)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 14133)
+Completed 200 OK in 30ms (Views: 18.8ms | ActiveRecord: 0.1ms | Allocations: 19035)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 17:02:10 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T17:02", "end_date"=>"2023-11-29T17:02", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5973)
+Completed 200 OK in 23ms (Views: 12.3ms | ActiveRecord: 0.6ms | Allocations: 9266)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 17:02:13 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 17:02:00 +0900", "end_date"=>"2023-11-29 17:02:00 +0900", "days"=>"-1", "person_num"=>"1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+Redirected to http://localhost:3000/rooms/1
+Completed 302 Found in 18ms (ActiveRecord: 1.2ms | Allocations: 6558)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-29 17:02:13 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1081)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 5446)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.1ms | Allocations: 7737)
+
+

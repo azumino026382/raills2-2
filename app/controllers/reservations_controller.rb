@@ -16,15 +16,19 @@ class ReservationsController < ApplicationController
     @room = Room.find(params[:reservation][:room_id])
     
     @reservation = Reservation.new(params.require(:reservation).permit(:room_id, :user_id, :start_date, :end_date, :person_num))
+    
     @days = ((@reservation.end_date).to_i - (@reservation.start_date).to_i)/60/60/24
     @total_price = ((@room.price).to_i * (@reservation.person_num).to_i * (@days).to_i)
+    
   end
 
   def create
     @room = Room.find(params[:reservation][:room_id])
-    @reservation = Reservation.new(params.require(:reservation).permit(:start_date, :end_date, :person_num, :room_id, :user_id, :days, :total_price))  #  ●モデルに定義するのこれでいいのか？モデルの定義必要なカラムとSQLの書き方とlikeテーブル
-    if params[:back] || !@reservation.save
-      render template: "rooms/show" and return
+    @reservation = Reservation.new(params.require(:reservation).permit(:start_date, :end_date, :person_num, :room_id, :user_id, :days, :total_price))  
+      
+      if params[:back] || !@reservation.save
+      
+      redirect_to room_path(@room)
     else  
       flash[:notice] = "予約が完了しました"
       redirect_to reservations_path
