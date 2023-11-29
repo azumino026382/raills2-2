@@ -7838,3 +7838,2269 @@ Processing by ReservationsController#confirm as HTML
 Completed 200 OK in 29ms (Views: 17.5ms | ActiveRecord: 0.8ms | Allocations: 16149)
 
 
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:27:44 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.4ms | Allocations: 795)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 4697)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 19810)
+Completed 200 OK in 77ms (Views: 48.5ms | ActiveRecord: 0.8ms | Allocations: 45256)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:27:57 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1765)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms | Allocations: 5264)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    3:     <h2>予約内容の確認</h2>
+    4:       <div class="ReservationConfirm__value-group">
+    5:         <p class="ReservationConfirm__label">チェックイン</p>
+    6:         <p class="ReservationConfirm__value"><%= @reservation.start_date.to_s(:datetime_jp) %></p>
+    7:       </div>
+    8: 
+    9:       <div class="ReservationConfirm__value-group">
+  
+app/views/reservations/confirm.html.erb:6:in `to_s'
+app/views/reservations/confirm.html.erb:6
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:28:52 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1462)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6495)
+Completed 200 OK in 22ms (Views: 9.9ms | ActiveRecord: 0.6ms | Allocations: 9913)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:28:56 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 247)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6396)
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 0.4ms | Allocations: 9392)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:28:57 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 1.9ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5300)
+Completed 200 OK in 20ms (Views: 9.7ms | ActiveRecord: 0.5ms | Allocations: 7749)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:32:51 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 250)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2328)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 7331)
+Completed 200 OK in 18ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 28980)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:32:53 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"", "end_date"=>"", "person_num"=>""}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.9ms | Allocations: 2764)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/reservations_controller.rb:21:in `to_s'
+app/controllers/reservations_controller.rb:21:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:37:04 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 250)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2326)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7330)
+Completed 200 OK in 21ms (Views: 8.1ms | ActiveRecord: 0.6ms | Allocations: 28963)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:37:20 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-29T21:37", "end_date"=>"2023-11-28T21:37", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1485)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 5967)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 0.4ms | Allocations: 9475)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:37:23 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 5435)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 7723)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:37:31 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-28T21:37", "end_date"=>"2023-11-29T21:37", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.1ms | Allocations: 969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5339)
+Completed 200 OK in 22ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 7830)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:37:33 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5435)
+Completed 200 OK in 18ms (Views: 10.6ms | ActiveRecord: 0.4ms | Allocations: 7721)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:38:14 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-30T21:38", "end_date"=>"2023-11-28T21:38", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.2ms | Allocations: 969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5338)
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 7829)
+
+
+Started POST "/reservations" for ::1 at 2023-11-28 21:38:15 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-30 21:38:00 +0900", "end_date"=>"2023-11-28 21:38:00 +0900", "days"=>"-2", "person_num"=>"1", "total_price"=>"-124000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 46.6ms | Allocations: 32752)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 48.0ms | Allocations: 33861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 38156)
+Completed 200 OK in 84ms (Views: 52.0ms | ActiveRecord: 0.6ms | Allocations: 49720)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-28 21:38:27 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"", "start_date"=>"2023-11-28T21:38", "end_date"=>"2023-11-30T21:38", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.3ms | Allocations: 2505)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room with 'id'=):
+  
+app/controllers/reservations_controller.rb:16:in `confirm'
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:41:40 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 5459)
+Completed 200 OK in 19ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 7744)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-28 21:41:45 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5065)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 7600)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-28 21:41:57 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 244)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 9.3ms | Allocations: 4416)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 8847)
+Completed 200 OK in 27ms (Views: 19.4ms | ActiveRecord: 0.4ms | Allocations: 12482)
+
+
+Started PUT "/users" for ::1 at 2023-11-28 21:42:17 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 400)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3003)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 7272)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 10537)
+
+
+Started PUT "/users" for ::1 at 2023-11-28 21:42:34 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$12$6ICx0huxG0e9gwsg2.HHTe4EhUfDO1yEr7vAyN2cE2479VD9TuDbm"], ["updated_at", "2023-11-28 12:42:34.683913"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 281ms (ActiveRecord: 2.0ms | Allocations: 5430)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-28 21:42:34 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms | Allocations: 1568)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-28 21:42:34 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1659)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 5541)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 7567)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-11-28 21:47:46 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maccha@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 279ms (ActiveRecord: 0.2ms | Allocations: 5028)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1032)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4795)
+Completed 200 OK in 244ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 5385)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-11-28 21:47:58 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maccha1@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.3ms | Allocations: 1621)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1031)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4846)
+Completed 200 OK in 269ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 5432)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-28 21:48:01 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1036)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4866)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 5491)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-11-28 21:48:11 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maccha@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 269ms (ActiveRecord: 0.4ms | Allocations: 4139)
+
+
+Started GET "/" for ::1 at 2023-11-28 21:48:11 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6314)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 7551)
+
+
+Started GET "/" for ::1 at 2023-11-28 21:55:48 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/application.html.erb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 15094)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.7ms | Allocations: 16447)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-28 21:55:53 +0900
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms | Allocations: 1571)
+
+
+Started GET "/" for ::1 at 2023-11-28 21:55:53 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5931)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms | Allocations: 6329)
+
+
+Started GET "/" for ::1 at 2023-11-28 21:55:55 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5929)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms | Allocations: 6320)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-28 21:55:58 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 236)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3336)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 7803)
+Completed 200 OK in 22ms (Views: 15.3ms | ActiveRecord: 0.3ms | Allocations: 11121)
+
+
+Started GET "/" for ::1 at 2023-11-28 21:56:05 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 753)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 5937)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms | Allocations: 6330)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:56:06 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.6ms | Allocations: 247)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 6407)
+Completed 200 OK in 26ms (Views: 14.0ms | ActiveRecord: 0.8ms | Allocations: 9442)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:56:18 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 5435)
+Completed 200 OK in 17ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 7723)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:56:19 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5436)
+Completed 200 OK in 18ms (Views: 9.5ms | ActiveRecord: 0.7ms | Allocations: 7723)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:56:20 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5435)
+Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 7722)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:56:26 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 5446)
+Completed 200 OK in 22ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 7734)
+
+
+Started GET "/rooms/1" for ::1 at 2023-11-28 21:56:50 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 367)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4028)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 19420)
+Completed 200 OK in 71ms (Views: 43.3ms | ActiveRecord: 0.8ms | Allocations: 44998)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-11-29 07:42:00 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-11-29T07:41", "end_date"=>"2023-11-30T07:41", "person_num"=>"-1"}, "commit"=>"予約する"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1538)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 5948)
+Completed 200 OK in 25ms (Views: 15.2ms | ActiveRecord: 0.6ms | Allocations: 10924)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 07:42:02 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-29 07:41:00 +0900", "end_date"=>"2023-11-30 07:41:00 +0900", "days"=>"1", "person_num"=>"-1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 1.6ms | Allocations: 567)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 57.8ms | Allocations: 34246)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.5ms | Allocations: 38528)
+Completed 200 OK in 102ms (Views: 78.8ms | ActiveRecord: 0.9ms | Allocations: 48095)
+
+
+Started POST "/reservations" for ::1 at 2023-11-29 11:29:55 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-11-29 07:41:00 +0900", "end_date"=>"2023-11-30 07:41:00 +0900", "days"=>"1", "person_num"=>"-1", "total_price"=>"-62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 1.0ms | Allocations: 815)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 51.6ms | Allocations: 36716)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.0ms | Allocations: 45686)
+Completed 200 OK in 93ms (Views: 65.9ms | ActiveRecord: 0.8ms | Allocations: 77899)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 11:30:02 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 7115)
+Completed 200 OK in 48ms (Views: 41.4ms | ActiveRecord: 0.4ms | Allocations: 10508)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 11:30:05 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 245)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 10.1ms | Allocations: 4422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 8884)
+Completed 200 OK in 26ms (Views: 20.9ms | ActiveRecord: 0.2ms | Allocations: 12536)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 11:30:29 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$12$A7.TGuR19aZGFGCmPa1/qOHvOaViNziZQoh/FxJy2SEnbNIkxRwPO"], ["updated_at", "2023-11-29 02:30:30.093435"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 263ms (ActiveRecord: 1.2ms | Allocations: 5817)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 11:30:30 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 1569)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-29 11:30:30 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1657)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 5523)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 7543)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-11-29 11:30:45 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maccha@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 274ms (ActiveRecord: 0.5ms | Allocations: 4586)
+
+
+Started GET "/" for ::1 at 2023-11-29 11:30:45 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6260)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 7496)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/profile" for ::1 at 2023-11-29 11:48:36 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 6090)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 11347)
+Completed 200 OK in 37ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 23772)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 11:48:40 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 254)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 79.1ms | Allocations: 37068)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.9ms | Allocations: 41530)
+Completed 200 OK in 93ms (Views: 85.8ms | ActiveRecord: 0.4ms | Allocations: 45200)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 11:48:58 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$12$JAYSa5HQCehI1W8ASbbx6eqD4FNlCjI4nPtn03WmDPSmYoyrN4mvS"], ["updated_at", "2023-11-29 02:48:58.928548"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 276ms (ActiveRecord: 1.4ms | Allocations: 6214)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 11:48:58 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 1568)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-29 11:48:58 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 5526)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 7573)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-11-29 11:49:09 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maccha@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 278ms (ActiveRecord: 0.1ms | Allocations: 6454)
+
+
+Started GET "/" for ::1 at 2023-11-29 11:49:09 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 961)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6264)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 7501)
+
+
+Started GET "/" for ::1 at 2023-11-29 12:09:35 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 758)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/application.html.erb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 21212)
+Completed 200 OK in 58ms (Views: 55.7ms | ActiveRecord: 0.4ms | Allocations: 22396)
+
+
+Started GET "/" for ::1 at 2023-11-29 12:10:17 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 12814)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.1ms | Allocations: 13207)
+
+
+Started GET "/" for ::1 at 2023-11-29 12:11:05 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 753)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 6005)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.2ms | Allocations: 6396)
+
+
+Started GET "/" for ::1 at 2023-11-29 12:11:36 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 12860)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.1ms | Allocations: 13254)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:11:46 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4795)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 6787)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:12:01 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2537)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 6968)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 9133)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:12:16 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 434)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3044)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 7313)
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 10544)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:14:59 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 324)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 7220)
+Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 10125)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:18:30 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 572)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 8646)
+Completed 200 OK in 15ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 20600)
+
+
+Started GET "/users" for ::1 at 2023-11-29 12:18:38 +0900
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 10ms (ActiveRecord: 0.0ms | Allocations: 2804)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#index is missing a template for request formats: text/html):
+  
+actionpack (6.1.7.6) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.7.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (6.1.7.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.7.6) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.7.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.7.6) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.7.6) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.7.6) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.6) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.6) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.6) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.6) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.6) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.6) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.6) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.6) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.6) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.6) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.6) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.6) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.6) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.6) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.6) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.6) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.6) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.6) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.6) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.6) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.6) lib/rails/engine.rb:539:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started PUT "/users" for ::1 at 2023-11-29 12:19:13 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile, :current_password[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 44.2ms | Allocations: 33113)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 49.7ms | Allocations: 37831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 73.0ms | Allocations: 52910)
+Completed 200 OK in 89ms (Views: 76.6ms | ActiveRecord: 0.4ms | Allocations: 66992)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:19:19 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 515)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 10285)
+Completed 200 OK in 39ms (Views: 29.2ms | ActiveRecord: 0.4ms | Allocations: 15834)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:19:20 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 322)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6970)
+Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 9887)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:19:48 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 519)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2803)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 7742)
+Completed 200 OK in 29ms (Views: 17.3ms | ActiveRecord: 0.9ms | Allocations: 12433)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:19:52 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 11ms (ActiveRecord: 0.3ms | Allocations: 2512)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:19:52 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5064)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 7631)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:20:00 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1713)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6085)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 7890)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:20:12 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 2050)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:20:12 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4680)
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 6373)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:23:25 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 5592)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 0.2ms | Allocations: 8234)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:23:29 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 236)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2986)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 7477)
+Completed 200 OK in 22ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 10797)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:24:16 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 236)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 8000)
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 0.3ms | Allocations: 11555)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:24:23 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 326)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 6949)
+Completed 200 OK in 23ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 9850)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started PUT "/users" for ::1 at 2023-11-29 12:38:24 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$12$F7AppCtx.cwlOUCQEfxb9uER17mVDv2GuhpLhaPlRZDhAIZ4ybLTy"], ["updated_at", "2023-11-29 03:38:24.617088"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 260ms (ActiveRecord: 1.6ms | Allocations: 14248)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:38:24 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 1747)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-29 12:38:24 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2543)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 10960)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 14434)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-11-29 12:38:36 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maccha@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 273ms (ActiveRecord: 0.3ms | Allocations: 4589)
+
+
+Started GET "/" for ::1 at 2023-11-29 12:38:36 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6338)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 7589)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:38:42 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5137)
+Completed 200 OK in 23ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 7607)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:38:44 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 249)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3400)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 7872)
+Completed 200 OK in 23ms (Views: 16.2ms | ActiveRecord: 0.6ms | Allocations: 10836)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:38:50 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 434)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2798)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7067)
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 10008)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:39:01 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$12$8.zvYnSPrVpPgOJPy5CET.6VbychjTx8vSe1sYgNXtw8UZEmB/GdC"], ["updated_at", "2023-11-29 03:39:01.868419"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:78:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 274ms (ActiveRecord: 1.5ms | Allocations: 4424)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:39:01 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1482)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-29 12:39:01 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1040)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4871)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 5502)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-11-29 12:39:12 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "maccha@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 272ms (ActiveRecord: 0.4ms | Allocations: 2447)
+
+
+Started GET "/" for ::1 at 2023-11-29 12:39:12 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 755)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5968)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 6367)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:39:34 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 635)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4693)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 6383)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:40:13 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 6741)
+Completed 200 OK in 33ms (Views: 27.7ms | ActiveRecord: 0.1ms | Allocations: 8441)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:40:16 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 46)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 6499)
+Completed 200 OK in 22ms (Views: 14.8ms | ActiveRecord: 0.4ms | Allocations: 8295)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:40:55 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 236)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2517)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 7535)
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 0.3ms | Allocations: 11120)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:40:59 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 2051)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:40:59 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5046)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.1ms | Allocations: 7452)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 12:44:20 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 958)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 52.7ms | Allocations: 37647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | Allocations: 52928)
+Completed 200 OK in 94ms (Views: 80.8ms | ActiveRecord: 0.4ms | Allocations: 65652)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 12:44:25 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 3173)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 12:44:25 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 975)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5106)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 7662)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20231109115635)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231109115635"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameAndProfileToUsers (20231109120238)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "profile" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231109120238"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRooms (20231113235625)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "room_name" varchar, "content" varchar, "price" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231113235625"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReservations (20231114094628)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" datetime, "end_date" datetime, "days" varchar, "person_num" varchar, "total_price" varchar, "user_id" integer, "room_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231114094628"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserImageToUsers (20231117000917)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "user_image" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231117000917"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeDatatypeUserImageOfUsers (20231117063216)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL, "profile" text DEFAULT NULL, "user_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","name","profile","user_image")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","name","profile","user_image" FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar DEFAULT NULL, "profile" text DEFAULT NULL, "user_image" text DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","name","profile","user_image")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","name","profile","user_image" FROM "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231117063216"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoomImageToRooms (20231120130125)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "rooms" ADD "room_image" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231120130125"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-11-29 04:04:10.108344"], ["updated_at", "2023-11-29 04:04:10.108344"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/profile" for ::1 at 2023-11-29 13:04:56 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.4ms | Allocations: 5215)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-11-29 13:04:56 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2598)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 11024)
+Completed 200 OK in 31ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 19332)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" datetime, "end_date" datetime, "days" varchar, "person_num" varchar, "total_price" varchar, "user_id" integer, "room_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "room_name" varchar, "content" varchar, "price" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "room_image" text)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar, "profile" text, "user_image" text)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231120130125)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231109115635),
+(20231109120238),
+(20231113235625),
+(20231114094628),
+(20231117000917),
+(20231117063216);
+
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-11-29 04:12:30.214128"], ["updated_at", "2023-11-29 04:12:30.214128"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "06a5dbb4da371deadc936130ef0838d147a2ddb2"], ["created_at", "2023-11-29 04:12:30.218482"], ["updated_at", "2023-11-29 04:12:30.218482"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" datetime, "end_date" datetime, "days" varchar, "person_num" varchar, "total_price" varchar, "user_id" integer, "room_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "rooms"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "room_name" varchar, "content" varchar, "price" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "room_image" text)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "name" varchar, "profile" text, "user_image" text)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231120130125)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231109115635),
+(20231109120238),
+(20231113235625),
+(20231114094628),
+(20231117000917),
+(20231117063216);
+
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-11-29 04:12:30.231041"], ["updated_at", "2023-11-29 04:12:30.231041"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-11-29 04:12:30.232956"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "06a5dbb4da371deadc936130ef0838d147a2ddb2"], ["created_at", "2023-11-29 04:12:30.235699"], ["updated_at", "2023-11-29 04:12:30.235699"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_up" for ::1 at 2023-11-29 13:15:49 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 3.4ms | Allocations: 943)
+  Rendered users/shared/_links.html.erb (Duration: 0.7ms | Allocations: 595)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 5073)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 13583)
+Completed 200 OK in 37ms (Views: 27.0ms | ActiveRecord: 0.2ms | Allocations: 24361)
+
+
+Started POST "/users" for ::1 at 2023-11-29 13:16:03 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新しいアカウントを作成"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maccha@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?)[0m  [["email", "maccha@gmail.com"], ["encrypted_password", "$2a$12$si8nw5...aQ18uRhdeeTg.Eu8HG74P9sHk9WcQVzMmq1QCIVPW352"], ["created_at", "2023-11-29 04:16:03.891511"], ["updated_at", "2023-11-29 04:16:03.891511"], ["name", "maccha"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 330ms (ActiveRecord: 1.6ms | Allocations: 43039)
+
+
+Started GET "/" for ::1 at 2023-11-29 13:16:03 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 963)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 6576)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 7828)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 13:16:10 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 985)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5112)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 7674)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 13:16:13 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 20.8ms | Allocations: 4871)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 9163)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 0.2ms | Allocations: 11110)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 13:16:20 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms | Allocations: 2225)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 13:16:20 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4711)
+Completed 200 OK in 19ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 6407)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/profile" for ::1 at 2023-11-29 13:29:03 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 6085)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 11348)
+Completed 200 OK in 40ms (Views: 21.2ms | ActiveRecord: 0.3ms | Allocations: 23777)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 13:29:05 +0900
+  
+SyntaxError (/Users/ohnoasaki/Documents/POTEPAN-CAMP/Rails_curriculum/work2-2/app/controllers/users/registrations_controller.rb:6: syntax error, unexpected '(', expecting `end' or dummy end
+...before_action :update_resource(resource, params), only: [:up...
+...                              ^
+):
+  
+app/controllers/users/registrations_controller.rb:6: syntax error, unexpected '(', expecting `end' or dummy end
+app/controllers/users/registrations_controller.rb:6: syntax error, unexpected '(', expecting `end' or dummy end
+Started GET "/users/edit" for ::1 at 2023-11-29 13:29:44 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 250)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 45.1ms | Allocations: 36073)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 40554)
+Completed 200 OK in 62ms (Views: 53.6ms | ActiveRecord: 0.4ms | Allocations: 51072)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 13:29:50 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2046)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/controllers/users/registrations_controller.rb:88:in `update_resource'
+Started PUT "/users" for ::1 at 2023-11-29 13:31:07 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 10066)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 13:31:07 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 713)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4867)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 6868)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:19:39 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 12.8ms | Allocations: 6510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 11771)
+Completed 200 OK in 37ms (Views: 26.1ms | ActiveRecord: 0.2ms | Allocations: 24280)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 14:19:44 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 254)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 74.6ms | Allocations: 36190)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.2ms | Allocations: 40652)
+Completed 200 OK in 88ms (Views: 82.0ms | ActiveRecord: 0.2ms | Allocations: 44322)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 14:19:46 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 3120)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:19:46 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4683)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 6379)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 14:19:48 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 6088)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 7884)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 14:19:52 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms | Allocations: 2045)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:19:52 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4709)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 6404)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:21:33 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 6291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 11588)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 23795)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 14:21:34 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 254)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 54.8ms | Allocations: 36190)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.3ms | Allocations: 40652)
+Completed 200 OK in 72ms (Views: 61.3ms | ActiveRecord: 1.2ms | Allocations: 44322)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 14:21:39 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 1415330ms (ActiveRecord: 0.2ms | Allocations: 51959)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:45:14 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 644)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4715)
+Completed 200 OK in 21ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 6414)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:47:35 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 6289)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 11551)
+Completed 200 OK in 36ms (Views: 25.0ms | ActiveRecord: 0.2ms | Allocations: 23981)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 14:47:37 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 254)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 73.4ms | Allocations: 36190)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.1ms | Allocations: 40652)
+Completed 200 OK in 92ms (Views: 81.5ms | ActiveRecord: 0.4ms | Allocations: 44322)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 14:47:41 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :name, :profile[0m
+Started PUT "/users" for ::1 at 2023-11-29 14:52:05 +0900
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 275190ms (ActiveRecord: 0.3ms | Allocations: 54011)
+
+
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "name" = ?, "profile" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-29 05:52:35.582201"], ["name", "maccha1"], ["profile", ""], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 44676ms (ActiveRecord: 3.0ms | Allocations: 44288)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:53:01 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4827)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 6826)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 14:53:05 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1864)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 6335)
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 8345)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 14:54:32 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "profile"=>""}, "commit"=>"Update"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "name" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-29 05:54:50.400980"], ["name", "maccha"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 31842ms (ActiveRecord: 2.2ms | Allocations: 42229)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 14:55:04 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 713)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4822)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 6820)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 15:09:43 +0900
+Processing by UsersController#show as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 936)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 5600)
+Completed 200 OK in 24ms (Views: 11.8ms | ActiveRecord: 0.8ms | Allocations: 9516)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 15:09:45 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 237)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 22.8ms | Allocations: 5384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 9760)
+Completed 200 OK in 52ms (Views: 42.1ms | ActiveRecord: 0.4ms | Allocations: 13134)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:09:53 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 435)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 7091)
+Completed 200 OK in 31181ms (Views: 11.3ms | ActiveRecord: 1.0ms | Allocations: 24629)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:11:02 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/users/edit" for ::1 at 2023-11-29 15:11:04 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 46)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6490)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 9522)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 15:11:15 +0900
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 322)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 6949)
+Completed 200 OK in 36961ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 43520)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:11:39 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2289)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 6769)
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 15719)
+
+
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 384)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2844)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 7222)
+Completed 200 OK in 34011ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 32071)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:12:36 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 386)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 7255)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 17535)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:13:07 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 322)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 6949)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.6ms | Allocations: 9833)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:13:23 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 49.5ms | Allocations: 33044)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 55.1ms | Allocations: 37674)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.4ms | Allocations: 46683)
+Completed 200 OK in 86ms (Views: 70.0ms | ActiveRecord: 0.4ms | Allocations: 60709)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:14:01 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 34.8ms | Allocations: 33044)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 39.2ms | Allocations: 37674)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 46683)
+Completed 200 OK in 61ms (Views: 50.2ms | ActiveRecord: 0.3ms | Allocations: 60709)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 15:14:20 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1975)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 7350)
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 0.2ms | Allocations: 10765)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 15:14:23 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 236)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2985)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 7453)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 10795)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:14:46 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 324)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2682)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 6951)
+Completed 200 OK in 55ms (Views: 45.0ms | ActiveRecord: 0.3ms | Allocations: 9834)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 15:17:43 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 862)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 54.9ms | Allocations: 38159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.4ms | Allocations: 47349)
+Completed 200 OK in 81ms (Views: 69.0ms | ActiveRecord: 0.5ms | Allocations: 60186)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:17:49 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "name" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-29 06:17:49.310240"], ["name", "maccha1"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 14ms (ActiveRecord: 1.7ms | Allocations: 5687)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 15:17:49 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 977)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 5108)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 7663)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 15:17:52 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 46)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 6512)
+Completed 200 OK in 33ms (Views: 27.0ms | ActiveRecord: 0.3ms | Allocations: 8310)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:17:57 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "name" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-29 06:17:57.677278"], ["name", "maccha"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 17ms (ActiveRecord: 1.8ms | Allocations: 4356)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 15:17:57 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 639)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4695)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 6389)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 15:18:38 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2295)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6777)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 0.4ms | Allocations: 15779)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:18:42 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha1", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "name" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-29 06:18:42.181223"], ["name", "maccha1"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 15ms (ActiveRecord: 1.8ms | Allocations: 4916)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 15:18:42 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 701)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4839)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 6838)
+
+
+Started GET "/users/edit" for ::1 at 2023-11-29 15:18:44 +0900
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6489)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 8287)
+
+
+Started PUT "/users" for ::1 at 2023-11-29 15:18:48 +0900
+Processing by Users::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"maccha", "email"=>"maccha@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "profile"=>""}, "commit"=>"Update"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "name" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-11-29 06:18:48.541373"], ["name", "maccha"], ["id", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:79:in `update'
+Redirected to http://localhost:3000/users/profile
+Completed 302 Found in 18ms (ActiveRecord: 2.4ms | Allocations: 4361)
+
+
+Started GET "/users/profile" for ::1 at 2023-11-29 15:18:48 +0900
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 7753)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 9728)
+
+

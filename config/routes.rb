@@ -5,11 +5,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+
+  get "users/profile" => "users#show"
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
-  get "users/profile" => "users#show"
   
   resources :users
   
