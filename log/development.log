@@ -11527,3 +11527,547 @@ Processing by RoomsController#show as HTML
 Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.1ms | Allocations: 7737)
 
 
+Started GET "/rooms/1" for ::1 at 2023-11-30 08:48:17 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2345)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2513)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.3ms | Allocations: 28019)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<ActionView::Base:0x00000000009f38>):
+    1: <div class="container RoomDetailsContainer">
+    2:   <%= render 'shared/error', object: form.object %>
+    3:   <div class="RoomDetailsHeader">  
+    4:     <%= link_to "←戻る", rooms_path %>
+    5:   </div>
+  
+app/views/rooms/show.html.erb:2
+Started GET "/rooms/1" for ::1 at 2023-11-30 08:48:58 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.5ms | Allocations: 275)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 5460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 14386)
+Completed 200 OK in 65ms (Views: 56.6ms | ActiveRecord: 0.3ms | Allocations: 17708)
+
+
+Started GET "/" for ::1 at 2023-11-30 08:49:03 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 2.1ms | Allocations: 1596)
+  Rendered homes/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1925)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7224)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 8465)
+
+
+Started GET "/?area=%E6%9D%B1%E4%BA%AC&keyword=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-11-30 08:49:07 +0900
+Processing by HomesController#index as HTML
+  Parameters: {"area"=>"東京", "keyword"=>"", "commit"=>"検索"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.1ms | Allocations: 1321)
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 6598)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.1ms | Allocations: 6988)
+
+
+Started GET "/rooms/search" for ::1 at 2023-11-30 08:53:57 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.8ms | Allocations: 2436)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 3.4ms | Allocations: 4015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 20684)
+Completed 200 OK in 51ms (Views: 34.3ms | ActiveRecord: 1.1ms | Allocations: 28432)
+
+
+Started GET "/" for ::1 at 2023-11-30 08:54:52 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.5ms | Allocations: 1323)
+  Rendered homes/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1521)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 57.6ms | Allocations: 6832)
+Completed 200 OK in 62ms (Views: 60.3ms | ActiveRecord: 0.1ms | Allocations: 8077)
+
+
+Started GET "/?area=%E6%9D%B1%E4%BA%AC&keyword=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-11-30 08:55:26 +0900
+Processing by HomesController#index as HTML
+  Parameters: {"area"=>"東京", "keyword"=>"", "commit"=>"検索"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.1ms | Allocations: 1322)
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 6610)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms | Allocations: 7001)
+
+
+Started GET "/?area=%E6%9D%B1%E4%BA%AC&keyword=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-11-30 15:44:15 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Parameters: {"area"=>"東京", "keyword"=>"", "commit"=>"検索"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.1ms | Allocations: 2048)
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3285)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3524)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 8216)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div>
+  <form class="SearchRoomsForm">
+    <%= form_tag (search_path, :method => 'get') do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+  </form>
+</div>  
+):
+1:    <div>
+2:      <form class="SearchRoomsForm">
+3:        <%= form_tag (search_path, :method => 'get') do %>
+4:            <%= text_field_tag :search %>
+5:            <%= submit_tag 'Search', :name => nil %>
+6:        <% end %>
+7:      </form>
+8:    </div>  
+  
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/homes/index.html.erb:2
+Started GET "/" for ::1 at 2023-11-30 15:44:34 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 2.8ms | Allocations: 1303)
+  Rendered homes/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1406)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1488)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1860)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div>
+  <form class="SearchRoomsForm">
+    <%= form_tag (search_path, :method => 'get') do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+  </form>
+</div>  
+):
+1:    <div>
+2:      <form class="SearchRoomsForm">
+3:        <%= form_tag (search_path, :method => 'get') do %>
+4:            <%= text_field_tag :search %>
+5:            <%= submit_tag 'Search', :name => nil %>
+6:        <% end %>
+7:      </form>
+8:    </div>  
+  
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/homes/index.html.erb:2
+Started GET "/rooms/search" for ::1 at 2023-11-30 15:44:35 +0900
+Processing by RoomsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.8ms | Allocations: 1287)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1889)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1972)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 5997)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div>
+  <form class="SearchRoomsForm">
+    <%= form_tag (search_path, :method => 'get') do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+  </form>
+</div>  
+):
+1:    <div>
+2:      <form class="SearchRoomsForm">
+3:        <%= form_tag (search_path, :method => 'get') do %>
+4:            <%= text_field_tag :search %>
+5:            <%= submit_tag 'Search', :name => nil %>
+6:        <% end %>
+7:      </form>
+8:    </div>  
+  
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/shared/_search.html.erb:3: syntax error, unexpected =>, expecting '.' or &. or :: or '['
+app/views/rooms/search.html.erb:2
+app/controllers/rooms_controller.rb:42:in `search'
+Started POST "/__web_console/repl_sessions/aaedabcaa89c6776deb4ab61c5322dbf/trace" for ::1 at 2023-11-30 15:44:44 +0900
+Started GET "/" for ::1 at 2023-11-30 15:46:06 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 3.2ms | Allocations: 1310)
+  Rendered homes/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1638)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 1720)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 3051)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div>
+  <form class="SearchRoomsForm">
+    <%= form_tag (search_path, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+  </form>
+</div>  
+):
+1:    <div>
+2:      <form class="SearchRoomsForm">
+3:        <%= form_tag (search_path, method: :get) do %>
+4:            <%= text_field_tag :search %>
+5:            <%= submit_tag 'Search', :name => nil %>
+6:        <% end %>
+7:      </form>
+8:    </div>  
+  
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/homes/index.html.erb:2
+Started GET "/" for ::1 at 2023-11-30 15:46:24 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.9ms | Allocations: 1310)
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1638)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1721)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3053)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div>
+  <form class="SearchRoomsForm">
+    <%= form_tag (search_path, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+  </form>
+</div>  
+):
+1:    <div>
+2:      <form class="SearchRoomsForm">
+3:        <%= form_tag (search_path, method: :get) do %>
+4:            <%= text_field_tag :search %>
+5:            <%= submit_tag 'Search', :name => nil %>
+6:        <% end %>
+7:      </form>
+8:    </div>  
+  
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/shared/_search.html.erb:3: syntax error, unexpected label, expecting '='
+app/views/homes/index.html.erb:2
+Started GET "/" for ::1 at 2023-11-30 15:46:47 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.4ms | Allocations: 1305)
+  Rendered homes/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1635)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1717)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3052)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `search_path' for #<ActionView::Base:0x0000000000b5e0>):
+    1: <div>
+    2:   <form class="SearchRoomsForm">
+    3:     <%= form_tag(search_path, method: :get) do %>
+    4:         <%= text_field_tag :search %>
+    5:         <%= submit_tag 'Search', :name => nil %>
+    6:     <% end %>
+  
+app/views/shared/_search.html.erb:3
+app/views/homes/index.html.erb:2
+Started GET "/" for ::1 at 2023-11-30 15:47:49 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.3ms | Allocations: 334)
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/application.html.erb:19
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 17865)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 1.3ms | Allocations: 19086)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-11-30 15:47:58 +0900
+Processing by HomesController#index as HTML
+  Parameters: {"search"=>"東京"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.6ms | Allocations: 199)
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 5577)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.1ms | Allocations: 5971)
+
+
+Started GET "/rooms" for ::1 at 2023-11-30 15:48:08 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 5979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 11370)
+Completed 200 OK in 37ms (Views: 25.4ms | ActiveRecord: 0.7ms | Allocations: 14428)
+
+
+Started GET "/rooms" for ::1 at 2023-11-30 18:01:56 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 7538)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 24240)
+Completed 200 OK in 55ms (Views: 36.8ms | ActiveRecord: 1.2ms | Allocations: 31798)
+
+
+Started GET "/" for ::1 at 2023-11-30 18:02:02 +0900
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 24.9ms | Allocations: 429)
+  Rendered homes/index.html.erb within layouts/application (Duration: 27.0ms | Allocations: 782)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 6214)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.1ms | Allocations: 7451)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-11-30 18:02:05 +0900
+Processing by HomesController#index as HTML
+  Parameters: {"search"=>"東京"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.7ms | Allocations: 199)
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 5610)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 6005)
+
+
+Started GET "/" for ::1 at 2023-11-30 18:02:58 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.9ms | Allocations: 1000)
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2001)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 19078)
+Completed 200 OK in 40ms (Views: 32.9ms | ActiveRecord: 1.0ms | Allocations: 23817)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-11-30 18:03:01 +0900
+Processing by HomesController#index as HTML
+  Parameters: {"search"=>"東京"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.6ms | Allocations: 199)
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 5591)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.1ms | Allocations: 5993)
+
+
+Started GET "/" for ::1 at 2023-11-30 18:04:50 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.9ms | Allocations: 1018)
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 19269)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 1.0ms | Allocations: 23970)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-11-30 18:04:52 +0900
+Processing by HomesController#index as HTML
+  Parameters: {"search"=>"東京"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 5591)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 5993)
+
+
+Started GET "/" for ::1 at 2023-11-30 18:09:11 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.1ms | Allocations: 572)
+  Rendered homes/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 17663)
+Completed 200 OK in 64ms (Views: 36.2ms | ActiveRecord: 1.5ms | Allocations: 24091)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-11-30 18:09:14 +0900
+Processing by HomesController#index as HTML
+  Parameters: {"search"=>"東京"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.6ms | Allocations: 199)
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 5591)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.3ms | Allocations: 5993)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-11-30 18:46:00 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Parameters: {"search"=>"東京"}
+  Rendering layout layouts/application.html.erb
+  Rendering homes/index.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 2.0ms | Allocations: 2170)
+  Rendered homes/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3223)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 20635)
+Completed 200 OK in 39ms (Views: 32.3ms | ActiveRecord: 1.0ms | Allocations: 25317)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-12-01 15:43:49 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"東京"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 5183)
+
+
+  
+NameError (undefined local variable or method `search_params' for #<RoomsController:0x00000000009da8>):
+  
+app/controllers/rooms_controller.rb:42:in `search'
+Started GET "/?search=%E6%9D%B1%E4%BA%AC" for ::1 at 2023-12-01 15:44:37 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"東京"}
+Completed 500 Internal Server Error in 2ms (Allocations: 2980)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/room.rb:11:in `search'
+app/models/room.rb:12:in `search'
+app/controllers/rooms_controller.rb:42:in `search'
+Started GET "/" for ::1 at 2023-12-01 15:44:47 +0900
+Processing by RoomsController#search as HTML
+Completed 500 Internal Server Error in 2ms (Allocations: 580)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/room.rb:11:in `search'
+app/models/room.rb:12:in `search'
+app/controllers/rooms_controller.rb:42:in `search'
+Started GET "/rooms" for ::1 at 2023-12-01 15:44:49 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/rooms/index.html.erb:18
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 7446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 23414)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 2.4ms | Allocations: 25106)
+
+

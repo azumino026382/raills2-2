@@ -7,4 +7,13 @@ class Room < ApplicationRecord
     has_many :reservations
 
     mount_uploader :room_image, RoomUploader
+
+    def self.search(keyword)
+        if search.present?
+          where(['address like? OR room_name like? OR content like?', "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
+        else
+          all
+        end  
+    end
+      
 end

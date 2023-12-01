@@ -1,13 +1,8 @@
 <div>
   <form class="SearchRoomsForm">
-    <%= form_with url: search_rooms_path, method: :get, local: true do |f| %> 
-      <div class="SearchRoomsFormContainer__input-group--area">
-        <%= f.text_field :area %>
-      </div>
-      <div class="SearchRoomsFormContainer__input-group--keyword">
-        <%= f.text_field :keyword %>
-      </div>
-      <%= f.submit "検索" %>
-    <% end %>
+  <%= form_with local: true, method: :get do |form| %>
+    <%= form.text_field :keyword %>
+    <%= form.submit '検索' %>
+  <% end %>
   </form>
 </div>  

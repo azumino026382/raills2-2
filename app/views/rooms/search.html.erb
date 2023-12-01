@@ -2,6 +2,9 @@
     <%= render "shared/search" %>
 </div>
 <div class="container RoomsContainer">
+  <% if @rooms.present? %>
+    <%= "#{@keyword}の検索結果" %>
+  
   <p class="RoomsContainer__result">
     <%= "#{@result_count}件が見つかりました。" %>
   </p>
@@ -43,5 +46,5 @@
     </li>
     <% end %>
   </ul>
-  
+  <% end %>
 </div>
