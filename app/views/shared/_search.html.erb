@@ -1,7 +1,11 @@
 <div>
   <form class="SearchRoomsForm">
   <%= form_with local: true, method: :get do |form| %>
-    <%= form.text_field :keyword %>
+    <p>エリアを入力</p>
+      <%= form.text_field :search_area %>
+   
+    <p>フリーワードを入力</p>
+      <%= form.text_field :search_free %>
     <%= form.submit '検索' %>
   <% end %>
   </form>

@@ -8,12 +8,20 @@ class Room < ApplicationRecord
 
     mount_uploader :room_image, RoomUploader
 
-    def self.search(keyword)
-        if search.present?
-          where(['address like? OR room_name like? OR content like?', "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
-        else
-          all
-        end  
+    def self.search_area(search)
+      if search
+        Room.where(['address like?', "%#{search}%"])
+      else
+        Room.none
+      end  
     end
+
+    def self.search_free(search)
+      if search
+        Room.where(['room_name like? OR content like?', "%#{search}%", "%#{search}%"])
+      else
+        Room.none      
+      end
+    end              
       
 end

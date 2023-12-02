@@ -39,8 +39,13 @@ class RoomsController < ApplicationController
   def search; end
 
   def search
-      @rooms = Room.search(params[:keyword])
+    if params[:search_area].present? && params[:search_free].blank?
+      @rooms = Room.search_area(params[:search_area])
       @result_count = @rooms.count
+    elsif params[:search_area].blank? && params[:search_free].present?
+      @rooms = Room.search_free(params[:search_free])
+      @result_count = @rooms.count
+    end    
   end
 end
 

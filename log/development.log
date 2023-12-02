@@ -12071,3 +12071,669 @@ Processing by RoomsController#index as HTML
 Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 2.4ms | Allocations: 25106)
 
 
+Started GET "/" for ::1 at 2023-12-01 18:00:32 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#search as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms"[0m
+  ↳ app/controllers/rooms_controller.rb:43:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.6ms | Allocations: 2327)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 18.6ms | Allocations: 14256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 26568)
+Completed 200 OK in 60ms (Views: 41.1ms | ActiveRecord: 1.5ms | Allocations: 35528)
+
+
+Started GET "/" for ::1 at 2023-12-01 18:01:20 +0900
+Processing by RoomsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.4ms | Allocations: 1543)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1657)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/application.html.erb:19
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 13461)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.4ms | Allocations: 16720)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:01:24 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"東京", "commit"=>"検索"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:43:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.6ms | Allocations: 867)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 14.5ms | Allocations: 7092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 12196)
+Completed 200 OK in 28ms (Views: 21.2ms | ActiveRecord: 2.1ms | Allocations: 13775)
+
+
+Started GET "/?search=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:02:15 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"東京", "commit"=>"検索"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:43:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 2.5ms | Allocations: 1065)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4375)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 10066)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 0.6ms | Allocations: 12116)
+
+
+Started GET "/rooms/new" for ::1 at 2023-12-01 18:02:30 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.8ms | Allocations: 267)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 18.5ms | Allocations: 4385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 8641)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.1ms | Allocations: 10514)
+
+
+Started GET "/rooms/new" for ::1 at 2023-12-01 18:38:34 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.5ms | Allocations: 836)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 13269)
+Completed 200 OK in 45ms (Views: 23.4ms | ActiveRecord: 0.5ms | Allocations: 32168)
+
+
+Started POST "/rooms" for ::1 at 2023-12-01 18:39:16 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ホテルニューオータニ", "content"=>"ホテルニューオータニは、1964年の東京オリンピック開催に向けて、東洋一の規模、日本初の高層ビルとして誕生しました。過去3回の東京サミットでは主会場に選ばれているほか、50年以上にわたり世界中のVIPをお迎えしてきました。「エグゼクティブハウス 禅」「ザ・メイン」「ガーデンタワー」とコンセプトの異なる3つのホテルに、個性豊かな38ヵ所のレストラン、33ヵ所の宴会場、400年以上の歴史ある日本庭園、都内ホテル最大級のアウトドアプール、ファッションから美術品まで100を超えるショッピングアーケード、エステサロンやスポーツクラブ、さらには万一の際にも安心なクリニックや薬局もございます。", "price"=>"50000", "address"=>"〒 102-8578東京都千代田区紀尾井町4-1", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010a6524e8 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231201-21454-vl464v.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.9ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ホテルニューオータニ"], ["content", "ホテルニューオータニは、1964年の東京オリンピック開催に向けて、東洋一の規模、日本初の高層ビルとして誕生しました。過去3回の東京サミットでは主会場に選ばれているほか、50年以上にわたり世界中のVIPをお迎えしてきました。「エグゼクティブハウス 禅」「ザ・メイン」「ガーデンタワー」とコンセプトの異なる3つのホテルに、個性豊かな38ヵ所のレストラン、33ヵ所の宴会場、400年以上の歴史ある日本庭園、都内ホテル最大級のアウトドアプール、ファッションから美術品まで100を超えるショッピングアーケード、エステサロンやスポーツクラブ、さらには万一の際にも安心なクリニックや薬局もございます。"], ["price", "50000"], ["address", "〒 102-8578東京都千代田区紀尾井町4-1"], ["created_at", "2023-12-01 09:39:16.379081"], ["updated_at", "2023-12-01 09:39:16.379081"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 135ms (ActiveRecord: 1.5ms | Allocations: 8929)
+
+
+Started GET "/rooms" for ::1 at 2023-12-01 18:39:16 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 7506)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 8074)
+
+
+Started GET "/rooms/new" for ::1 at 2023-12-01 18:39:24 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5371)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.1ms | Allocations: 7078)
+
+
+Started POST "/rooms" for ::1 at 2023-12-01 18:39:49 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"マンダリン オリエンタル 東京", "content"=>"マンダリン オリエンタル 東京 は、最高峰の評価を得る世界屈指のラグジュアリーホテル。400年の歴史が育む伝統と革新が交錯する日本橋のランドマーク38階に位置するフロントからは、東京スカイツリー®、隅田川から東京湾、皇居や副都心、そして遥か富士山までをも見晴らします。すべてのゲストルームからメトロポリスのダイナミックな眺望をお楽しみください。\r\n東京メトロ銀座線・半蔵門線「三越前駅」地下通路直結でアクセスも抜群。", "price"=>"110000", "address"=>"〒 103-8328東京都中央区日本橋室町2-1-1", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x0000000109d51510 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231201-21454-a7ra90.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "マンダリン オリエンタル 東京"], ["content", "マンダリン オリエンタル 東京 は、最高峰の評価を得る世界屈指のラグジュアリーホテル。400年の歴史が育む伝統と革新が交錯する日本橋のランドマーク38階に位置するフロントからは、東京スカイツリー®、隅田川から東京湾、皇居や副都心、そして遥か富士山までをも見晴らします。すべてのゲストルームからメトロポリスのダイナミックな眺望をお楽しみください。\r\n東京メトロ銀座線・半蔵門線「三越前駅」地下通路直結でアクセスも抜群。"], ["price", "110000"], ["address", "〒 103-8328東京都中央区日本橋室町2-1-1"], ["created_at", "2023-12-01 09:39:49.749277"], ["updated_at", "2023-12-01 09:39:49.749277"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 132ms (ActiveRecord: 0.7ms | Allocations: 6834)
+
+
+Started GET "/rooms" for ::1 at 2023-12-01 18:39:49 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 9054)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.1ms | Allocations: 9467)
+
+
+Started GET "/rooms/new" for ::1 at 2023-12-01 18:39:53 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.3ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5381)
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 0.3ms | Allocations: 7074)
+
+
+Started POST "/rooms" for ::1 at 2023-12-01 18:40:25 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ザ・リッツ・カールトン大阪", "content"=>"大阪でもっとも賑わう梅田に位置し、JR大阪駅からも徒歩約7分のザ･リッツ･カールトン大阪は、リッツ・カールトン日本第一号として開業。伝統的なジョージアンスタイル、18世紀の貴族の邸宅を彷彿させる「第二の我が家」で、くつろぎのひと時をお過ごしください。", "price"=>"62000", "address"=>"〒 530-0001大阪府大阪市北区梅田2丁目5番25号", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010a0d3670 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231201-21454-vl1c2h.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ザ・リッツ・カールトン大阪"], ["content", "大阪でもっとも賑わう梅田に位置し、JR大阪駅からも徒歩約7分のザ･リッツ･カールトン大阪は、リッツ・カールトン日本第一号として開業。伝統的なジョージアンスタイル、18世紀の貴族の邸宅を彷彿させる「第二の我が家」で、くつろぎのひと時をお過ごしください。"], ["price", "62000"], ["address", "〒 530-0001大阪府大阪市北区梅田2丁目5番25号"], ["created_at", "2023-12-01 09:40:25.403895"], ["updated_at", "2023-12-01 09:40:25.403895"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 129ms (ActiveRecord: 0.8ms | Allocations: 6820)
+
+
+Started GET "/rooms" for ::1 at 2023-12-01 18:40:25 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2636)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 7910)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms | Allocations: 8321)
+
+
+Started GET "/rooms/new" for ::1 at 2023-12-01 18:40:28 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5370)
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 7063)
+
+
+Started POST "/rooms" for ::1 at 2023-12-01 18:40:56 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ホテルオークラ京都", "content"=>"1888年創業の歴史をもつその落ち着いたたたずまい、そしてたくさんのお客様をお迎えしてきたホスピタリティはそのままに、心地よい京都での滞在をお約束します。ヨーロッパのイメージの中に格調高い和の伝統が香るエントランスロビー。お客様とは、いつも温かい出逢いからはじまります。ホテルオークラ京都は京都市の中心に位置し、祇園・先斗町・鴨川など京の名所に大変便利な立地です。", "price"=>"28000", "address"=>"〒 604-0924京都府京都市中京区河原町通二条南入 一之船入町５３７番地の４", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010a47f418 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231201-21454-tfqwik.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ホテルオークラ京都"], ["content", "1888年創業の歴史をもつその落ち着いたたたずまい、そしてたくさんのお客様をお迎えしてきたホスピタリティはそのままに、心地よい京都での滞在をお約束します。ヨーロッパのイメージの中に格調高い和の伝統が香るエントランスロビー。お客様とは、いつも温かい出逢いからはじまります。ホテルオークラ京都は京都市の中心に位置し、祇園・先斗町・鴨川など京の名所に大変便利な立地です。"], ["price", "28000"], ["address", "〒 604-0924京都府京都市中京区河原町通二条南入 一之船入町５３７番地の４"], ["created_at", "2023-12-01 09:40:56.765145"], ["updated_at", "2023-12-01 09:40:56.765145"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 124ms (ActiveRecord: 1.1ms | Allocations: 6814)
+
+
+Started GET "/rooms" for ::1 at 2023-12-01 18:40:56 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 8413)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.1ms | Allocations: 8827)
+
+
+Started GET "/rooms/new" for ::1 at 2023-12-01 18:41:00 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5370)
+Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 7077)
+
+
+Started GET "/rooms" for ::1 at 2023-12-01 18:41:05 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 8384)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.3ms | Allocations: 8792)
+
+
+Started GET "/rooms/new" for ::1 at 2023-12-01 18:41:08 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5378)
+Completed 200 OK in 24ms (Views: 16.0ms | ActiveRecord: 0.4ms | Allocations: 7071)
+
+
+Started POST "/rooms" for ::1 at 2023-12-01 18:41:54 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "room"=>{"room_name"=>"ホテルモントレエーデルホフ札幌", "content"=>"エーデルホフはドイツ語で“貴族のお屋敷”を意味します。かつてのこの立地に存在した北海道営林局の面影を残す種々の巨木が豊かな緑を茂らせ、その緑をそのままにお屋敷の庭園を思わせる憩いの庭をつくろうと、このように名付けたのです。十九世紀末のウィーンに思いをよせたストーリーでお客様をお迎えしています。", "price"=>"10000", "address"=>"〒 060-0002北海道札幌市中央区北2条西1丁目", "room_image"=>#<ActionDispatch::Http::UploadedFile:0x000000010a2365f8 @tempfile=#<Tempfile:/var/folders/31/618kg0hn2qs2f1vvk1hm5ycw0000gn/T/RackMultipart20231201-21454-wftgzf.png>, @original_filename="default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"room[room_image]\"; filename=\"default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"保存"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("room_name", "content", "price", "address", "created_at", "updated_at", "room_image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["room_name", "ホテルモントレエーデルホフ札幌"], ["content", "エーデルホフはドイツ語で“貴族のお屋敷”を意味します。かつてのこの立地に存在した北海道営林局の面影を残す種々の巨木が豊かな緑を茂らせ、その緑をそのままにお屋敷の庭園を思わせる憩いの庭をつくろうと、このように名付けたのです。十九世紀末のウィーンに思いをよせたストーリーでお客様をお迎えしています。"], ["price", "10000"], ["address", "〒 060-0002北海道札幌市中央区北2条西1丁目"], ["created_at", "2023-12-01 09:41:54.837185"], ["updated_at", "2023-12-01 09:41:54.837185"], ["room_image", "default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png"]]
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/rooms_controller.rb:14:in `create'
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 123ms (ActiveRecord: 0.7ms | Allocations: 6800)
+
+
+Started GET "/rooms" for ::1 at 2023-12-01 18:41:54 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 8868)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 9281)
+
+
+Started GET "/" for ::1 at 2023-12-01 18:42:01 +0900
+Processing by RoomsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.9ms | Allocations: 1663)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 7604)
+Completed 200 OK in 28ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 10150)
+
+
+Started GET "/?search=%E5%A4%A7%E9%98%AA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:42:08 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"大阪", "commit"=>"検索"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%大阪%' OR room_name like'%大阪%' OR content like'%大阪%')[0m
+  ↳ app/controllers/rooms_controller.rb:43:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.9ms | Allocations: 866)
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%大阪%' OR room_name like'%大阪%' OR content like'%大阪%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3528)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 8605)
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 1.0ms | Allocations: 9804)
+
+
+Started GET "/?search=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:42:16 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"京都", "commit"=>"検索"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%京都%' OR room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/controllers/rooms_controller.rb:43:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.8ms | Allocations: 807)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%京都%' OR room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 13.6ms | Allocations: 8404)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 13507)
+Completed 200 OK in 28ms (Views: 21.6ms | ActiveRecord: 0.6ms | Allocations: 15049)
+
+
+Started GET "/?search=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:53:59 +0900
+  
+SyntaxError (/Users/ohnoasaki/Documents/POTEPAN-CAMP/Rails_curriculum/work2-2/app/controllers/rooms_controller.rb:50: syntax error, unexpected end-of-input):
+  
+app/controllers/rooms_controller.rb:50: syntax error, unexpected end-of-input
+app/controllers/rooms_controller.rb:50: syntax error, unexpected end-of-input
+Started GET "/?search=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:54:20 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"京都", "commit"=>"検索"}
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.8ms | Allocations: 2243)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/layouts/application.html.erb:19
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 14767)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.2ms | Allocations: 18645)
+
+
+Started GET "/?search=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:57:27 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search"=>"京都", "commit"=>"検索"}
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 2.1ms | Allocations: 1587)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 8191)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.1ms | Allocations: 9597)
+
+
+Started GET "/?search_area=%E6%9D%B1%E4%BA%AC&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:57:52 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"東京", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.4ms | Allocations: 1363)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 15.1ms | Allocations: 10429)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 15513)
+Completed 200 OK in 31ms (Views: 25.1ms | ActiveRecord: 1.6ms | Allocations: 16772)
+
+
+Started GET "/?search_area=&search_free=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:58:00 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"", "search_free"=>"京都", "commit"=>"検索"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%京都%' OR room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/controllers/rooms_controller.rb:47:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.6ms | Allocations: 1362)
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%京都%' OR room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 9.1ms | Allocations: 8461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 13538)
+Completed 200 OK in 22ms (Views: 15.6ms | ActiveRecord: 1.1ms | Allocations: 14625)
+
+
+Started GET "/?search_area=%E6%9D%B1%E4%BA%AC&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:59:07 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"東京", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.1ms | Allocations: 1583)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%東京%' OR room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 7.5ms | Allocations: 7869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 13569)
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.7ms | Allocations: 15622)
+
+
+Started GET "/?search_area=%E4%BA%AC%E9%83%BD&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-01 18:59:17 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"京都", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%京都%' OR room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.7ms | Allocations: 1364)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%京都%' OR room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 11.2ms | Allocations: 8467)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 13561)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 0.7ms | Allocations: 14653)
+
+
+Started GET "/?search_area=&search_free=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 00:16:08 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"", "search_free"=>"京都", "commit"=>"検索"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/room.rb:13:in `search'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%京都%')[0m
+  ↳ app/controllers/rooms_controller.rb:47:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.1ms | Allocations: 2038)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%京都%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 7.1ms | Allocations: 12687)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 22679)
+Completed 200 OK in 24ms (Views: 17.2ms | ActiveRecord: 0.8ms | Allocations: 27533)
+
+
+Started GET "/?search_area=%E5%A4%A7%E9%98%AA&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 00:16:13 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"大阪", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%大阪%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.1ms | Allocations: 1364)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%大阪%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3990)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 9067)
+Completed 200 OK in 23ms (Views: 15.2ms | ActiveRecord: 1.0ms | Allocations: 10142)
+
+
+Started GET "/?search_area=&search_free=%E5%A4%A7%E9%98%AA&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 00:16:19 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"", "search_free"=>"大阪", "commit"=>"検索"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%大阪%')[0m
+  ↳ app/controllers/rooms_controller.rb:47:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 3.2ms | Allocations: 1362)
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%大阪%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3988)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 9065)
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 1.0ms | Allocations: 10137)
+
+
+Started GET "/?search_area=%E6%9C%AD%E5%B9%8C&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 00:16:24 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"札幌", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%札幌%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 3.7ms | Allocations: 1364)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%札幌%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4001)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 9107)
+Completed 200 OK in 24ms (Views: 16.7ms | ActiveRecord: 2.4ms | Allocations: 10182)
+
+
+Started GET "/?search_area=&search_free=%E6%9C%AD%E5%B9%8C&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 00:16:33 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"", "search_free"=>"札幌", "commit"=>"検索"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%札幌%')[0m
+  ↳ app/controllers/rooms_controller.rb:47:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.8ms | Allocations: 1362)
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%札幌%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3997)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 9078)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 1.0ms | Allocations: 10151)
+
+
+Started GET "/" for ::1 at 2023-12-02 17:47:12 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 2.1ms | Allocations: 3048)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 4.1ms | Allocations: 4668)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 21521)
+Completed 200 OK in 41ms (Views: 34.9ms | ActiveRecord: 0.3ms | Allocations: 26278)
+
+
+Started GET "/?search_area=%E6%9D%B1%E4%BA%AC&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 17:47:18 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"東京", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.8ms | Allocations: 1365)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 23.9ms | Allocations: 10794)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 15902)
+Completed 200 OK in 46ms (Views: 31.0ms | ActiveRecord: 0.8ms | Allocations: 20177)
+
+
+Started GET "/?search_area=%E4%BA%AC%E9%83%BD&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 17:47:23 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"京都", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%京都%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.7ms | Allocations: 1364)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%京都%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 16.7ms | Allocations: 8467)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 13545)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.5ms | Allocations: 14631)
+
+
+Started GET "/?search_area=&search_free=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 17:47:31 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"", "search_free"=>"京都", "commit"=>"検索"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/controllers/rooms_controller.rb:47:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.4ms | Allocations: 1364)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (room_name like'%京都%' OR content like'%京都%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3992)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 9070)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 1.2ms | Allocations: 10168)
+
+
+Started GET "/?search_area=&search_free=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 17:47:50 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"", "search_free"=>"東京", "commit"=>"検索"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:47:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.3ms | Allocations: 1363)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (room_name like'%東京%' OR content like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 10.1ms | Allocations: 5480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 10557)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.8ms | Allocations: 11637)
+
+
+Started GET "/?search_area=%E6%9D%B1%E4%BA%AC&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 17:52:45 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"東京", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 1.8ms | Allocations: 3104)
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 16.7ms | Allocations: 17912)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 30198)
+Completed 200 OK in 50ms (Views: 32.3ms | ActiveRecord: 0.9ms | Allocations: 38965)
+
+
