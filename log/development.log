@@ -12737,3 +12737,288 @@ Processing by RoomsController#search as HTML
 Completed 200 OK in 50ms (Views: 32.3ms | ActiveRecord: 0.9ms | Allocations: 38965)
 
 
+Started GET "/rooms" for ::1 at 2023-12-02 17:55:18 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 10154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 26236)
+Completed 200 OK in 42ms (Views: 30.5ms | ActiveRecord: 0.6ms | Allocations: 33350)
+
+
+Started GET "/rooms/1" for ::1 at 2023-12-02 17:55:42 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.5ms | Allocations: 271)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 7109)
+Completed 200 OK in 29ms (Views: 10.6ms | ActiveRecord: 1.2ms | Allocations: 15440)
+
+
+Started GET "/rooms" for ::1 at 2023-12-02 17:56:29 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3583)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 8858)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.5ms | Allocations: 9266)
+
+
+Started GET "/" for ::1 at 2023-12-02 17:56:33 +0900
+Processing by RoomsController#search as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 3.0ms | Allocations: 2283)
+  Rendered rooms/search.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3037)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 8260)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.1ms | Allocations: 8805)
+
+
+Started GET "/?search_area=%E6%9D%B1%E4%BA%AC&search_free=&commit=%E6%A4%9C%E7%B4%A2" for ::1 at 2023-12-02 17:56:36 +0900
+Processing by RoomsController#search as HTML
+  Parameters: {"search_area"=>"東京", "search_free"=>"", "commit"=>"検索"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rooms" WHERE (address like'%東京%')[0m
+  ↳ app/controllers/rooms_controller.rb:44:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/search.html.erb within layouts/application
+  Rendered shared/_search.html.erb (Duration: 0.9ms | Allocations: 1363)
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE (address like'%東京%')[0m
+  ↳ app/views/rooms/search.html.erb:5
+  Rendered rooms/search.html.erb within layouts/application (Duration: 9.1ms | Allocations: 7005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 12083)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.5ms | Allocations: 13287)
+
+
+Started GET "/rooms" for ::1 at 2023-12-02 17:58:10 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 3588)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 8863)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.3ms | Allocations: 9279)
+
+
+Started GET "/reservations" for ::1 at 2023-12-02 17:58:22 +0900
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/reservations/index.html.erb:22
+  Rendered reservations/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1761)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 6194)
+Completed 200 OK in 29ms (Views: 19.7ms | ActiveRecord: 0.2ms | Allocations: 10136)
+
+
+Started GET "/rooms" for ::1 at 2023-12-02 17:58:27 +0900
+Processing by RoomsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:18
+  Rendered rooms/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:19
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 8886)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.5ms | Allocations: 9296)
+
+
+Started GET "/rooms/1" for ::1 at 2023-12-02 17:58:28 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5436)
+Completed 200 OK in 17ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 7726)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-12-02 17:58:37 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-12-02T17:58", "end_date"=>"2023-12-03T17:58", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5850)
+Completed 200 OK in 23ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 8714)
+
+
+Started POST "/reservations" for ::1 at 2023-12-02 17:58:44 +0900
+Processing by ReservationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"room_id"=>"1", "user_id"=>"1", "start_date"=>"2023-12-02 17:58:00 +0900", "end_date"=>"2023-12-03 17:58:00 +0900", "days"=>"1", "person_num"=>"1", "total_price"=>"62000"}, "commit"=>"予約を確定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "end_date", "days", "person_num", "total_price", "user_id", "room_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2023-12-02 08:58:00"], ["end_date", "2023-12-03 08:58:00"], ["days", "1"], ["person_num", "1"], ["total_price", "62000"], ["user_id", 1], ["room_id", 1], ["created_at", "2023-12-02 08:58:44.915986"], ["updated_at", "2023-12-02 08:58:44.915986"]]
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reservations_controller.rb:29:in `create'
+Redirected to http://localhost:3000/reservations
+Completed 302 Found in 22ms (ActiveRecord: 1.7ms | Allocations: 9505)
+
+
+Started GET "/reservations" for ::1 at 2023-12-02 17:58:44 +0900
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/reservations/index.html.erb:22
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:23
+  Rendered reservations/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 6165)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 7885)
+
+
+Started GET "/reservations" for ::1 at 2023-12-02 18:00:15 +0900
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/reservations/index.html.erb:22
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:23
+  Rendered reservations/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 7215)
+Completed 200 OK in 23ms (Views: 17.0ms | ActiveRecord: 0.4ms | Allocations: 9918)
+
+
+Started GET "/reservations" for ::1 at 2023-12-02 18:05:40 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/reservations/index.html.erb:22
+  [1m[36mRoom Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:23
+  Rendered reservations/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 16597)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 26289)
+Completed 200 OK in 65ms (Views: 42.8ms | ActiveRecord: 0.8ms | Allocations: 41225)
+
+
+Started GET "/rooms/1" for ::1 at 2023-12-02 18:05:49 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.6ms | Allocations: 274)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2786)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 7230)
+Completed 200 OK in 29ms (Views: 18.5ms | ActiveRecord: 0.8ms | Allocations: 10547)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-12-02 18:05:59 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-12-02T18:05", "end_date"=>"2023-12-03T18:05", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1473)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5844)
+Completed 200 OK in 23ms (Views: 10.0ms | ActiveRecord: 0.7ms | Allocations: 8721)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-12-02 18:06:43 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-12-02T18:05", "end_date"=>"2023-12-03T18:05", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 6462)
+Completed 200 OK in 22ms (Views: 13.6ms | ActiveRecord: 0.3ms | Allocations: 9931)
+
+
+Started GET "/rooms/1" for ::1 at 2023-12-02 18:06:52 +0900
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/show.html.erb within layouts/application
+  Rendered shared/_error.html.erb (Duration: 0.5ms | Allocations: 258)
+  Rendered rooms/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1972)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6434)
+Completed 200 OK in 22ms (Views: 12.3ms | ActiveRecord: 0.5ms | Allocations: 9435)
+
+
+Started POST "/reservations/confirm" for ::1 at 2023-12-02 18:07:02 +0900
+Processing by ReservationsController#confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reservation"=>{"user_id"=>"1", "room_id"=>"1", "start_date"=>"2023-12-04T18:06", "end_date"=>"2023-12-06T18:06", "person_num"=>"1"}, "commit"=>"予約する"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16:in `confirm'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/confirm.html.erb within layouts/application
+  Rendered reservations/confirm.html.erb within layouts/application (Duration: 1.7ms | Allocations: 970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5351)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 7847)
+
+
