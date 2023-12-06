@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <% if object.errors.any? %>
+    <% object.errors.full_messages.each do |message| %>
+      <ul>
+        <li><%= message %></li>
+      </ul>
+    <% end %>
+  <% end %>
+<% else %>
+   <%= link_to "Sign in", new_user_session_path %>
+<% end %>  
