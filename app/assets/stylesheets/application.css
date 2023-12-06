@@ -143,3 +143,43 @@
       background-color:#e0fdff;
   }
   
+  .SearchRoomsFormContainer {
+    margin-top: 10px;
+    padding-bottom: 35px;
+    padding-left: 20px;
+  }
+
+  section {
+    display: block;
+  }
+
+  .container {
+ 
+    padding: 0 32px;
+    margin: 0 36px;
+  }
+
+  .RecommendAreaSection {
+    margin-bottom: 260px;
+  }
+
+  h2 {
+    display: block;
+  }
+
+  .RecommendAreas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-gap: 32px;
+    gap: 32px;    
+}
+  .RecommendArea {
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    justify-content: flex-end;
+    padding: 40px 24px;
+    width: calc(25% - 24px);
+}

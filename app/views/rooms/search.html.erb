@@ -1,7 +1,22 @@
 <div class="SearchRoomsFormContainer">
     <%= render "shared/search" %>
 </div>
-<div class="container RoomsContainer">
+
+<div class="container">
+<% if params[:search_area].blank? && params[:search_free].blank? %>
+  <section class="RecommendAreaSection">
+  <div class="RecommendAreas__title">
+  <h2>おすすめのエリア</h2>
+  </div>
+  <div class="RecommendAreas">
+    <%= link_to image_tag('tokyo2.jpg'), search_rooms_path(search_area: "東京"), class: 'RecommendArea', width: '50%', height: '50%' %>
+    <%= link_to image_tag('osaka.jpg'), search_rooms_path(search_area: "大阪"), class: 'RecommendArea' %>
+    <%= link_to image_tag('kyoto.jpg'), search_rooms_path(search_area: "京都"), class: 'RecommendArea' %>
+    <%= link_to image_tag('sapporo2.jpg'), search_rooms_path(search_area: "札幌"), class: 'RecommendArea' %>
+  </div>
+  </section>
+<% else %>
+  <div class="RoomsContainer">
   <% if @rooms.present? %>
   <p class="RoomsContainer__result">
     <%= "#{@result_count}件が見つかりました。" %>
@@ -45,4 +60,6 @@
     <% end %>
   </ul>
   <% end %>
+  </div>
+<% end %>
 </div>
